@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>rbrianaaron</title>
+	<meta name="description" content="">
+	<meta name="author" content="rbrianaaron">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+
+
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/">rbrianaaron</a>
+			<ul class="nav">
+						<li><a href="/pages/insert-images-in-your-pelican-page.html">Insert Images in Your Pelican Page</a></li>
+						<li><a href="/pages/pelican-setup-tutorial-windows.html">Pelican Setup Tutorial for Windows</a></li>
+						<li><a href="/pages/changing-pelican-themes.html">Changing Pelican Themes</a></li>
+			</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="http://getpelican.com/">Pelican</a></li>
+				<li><a href="http://python.org/">Python.org</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="#">You can add links in your config file</a></li>
+				<li><a href="#">Another social link</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='page'>
+		<div class="page-header"><h1>Insert Images in Your Pelican Page</h1></div>
+		<div><p>I thought it looked easy enough in the Pelican docs <a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages">articles-and-pages</a> section <strong>Linking to static files</strong> section.</p>
+<p>I placed two <code>.png</code> images in the following directory:</p>
+<div class="highlight"><pre>C:\Users\Brian\virtualenvs\pelican\Scripts\content\images
+</pre></div>
+
+
+<p>I inserted the following scipt in my markdown file.</p>
+<p><code>![Alt Text]({filename}/images/output.png)</code></p>
+<p>When that didn't work, I tried:</p>
+<p><code>![Alt Text]({filename}C:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png)</code></p>
+<p>Here are the errors I got:</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
+WARNING: Unable to find `/images/output.png`, skipping url replacement.
+WARNING: Unable to find `/images/first.png`, skipping url replacement.
+Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.97 seconds.
+</pre></div>
+
+
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
+WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png`, skipping url replacement.
+
+WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/first.png`, skipping url replacement.
+Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.29 seconds.
+</pre></div>
+
+
+<p>It's tough to be a novice. Okay, let's try and figure out what I was really suppossed to do.</p>
+<p>I look at the <a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages">docs</a> section <strong>Linking to static files</strong> again. 
+I was supposed to ensure that the <code>STATIC_PATHS</code> setting in the <code>pelicanconf.py</code> file includes images, for example:</p>
+<div class="highlight"><pre>STATIC_PATHS = [&#39;images&#39;]
+</pre></div>
+
+
+<p>I make the correction and generate the content again. I get the same error.</p>
+<p>I review the <a href="http://docs.getpelican.com/en/3.5.0/content.html">Writing Content docs</a> again, especially the following section in <strong>Linking to static files</strong>:</p>
+<blockquote>
+<p>For example, a project’s content directory might be structured like this:</p>
+</blockquote>
+<div class="highlight"><pre>content
++-- images
+¦   +-- han.jpg
++-- pdfs
+¦   +-- menu.pdf
++-- pages
+    +-- test.md
+</pre></div>
+
+
+<p>I realize that my directory does not contain a pages folder. I add one regenerate the page.</p>
+<p><strong>Success!</strong></p></div>
+	</div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; rbrianaaron</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

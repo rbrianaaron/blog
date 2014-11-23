@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>rbrianaaron</title>
+	<meta name="description" content="">
+	<meta name="author" content="rbrianaaron">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+
+
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/">rbrianaaron</a>
+			<ul class="nav">
+						<li><a href="/pages/insert-images-in-your-pelican-page.html">Insert Images in Your Pelican Page</a></li>
+						<li><a href="/pages/pelican-setup-tutorial-windows.html">Pelican Setup Tutorial for Windows</a></li>
+						<li><a href="/pages/changing-pelican-themes.html">Changing Pelican Themes</a></li>
+			</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="http://getpelican.com/">Pelican</a></li>
+				<li><a href="http://python.org/">Python.org</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="#">You can add links in your config file</a></li>
+				<li><a href="#">Another social link</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='page'>
+		<div class="page-header"><h1>Changing Pelican Themes</h1></div>
+		<div><p>This post will guide the reader on how to install and change Pelican themes. </p>
+<p>This post is for complete novices like myself. It is not intended for experienced users.</p>
+<p>CD to the Scripts directory of your project and activate the virtualenv. </p>
+<div class="highlight"><pre>PS C:\Users\Brian&gt; cd virtualenvs\pelican\Scripts
+PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; .\activate
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt;
+</pre></div>
+
+
+<p>I tried the following commands as per the Pelican docs section 'pelican-themes'(http://docs.getpelican.com/en/3.5.0/pelican-themes.html).</p>
+<p>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican-themes -l
+notmyidea
+simple
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican-themes --list
+notmyidea
+simple</p>
+<p>I have currently have two themes, 'notmyidea' and 'simple'.</p>
+<p>Now how to install in a new theme?</p>
+<p>I start my journey by going to http://pelican-themes-gallery.place.org/ to look at different themes. 
+I decided on the pelican-bootstrap3 theme.</p>
+<p>I then review the information on the GitHub pelican-themes <a href="https://github.com/getpelican/pelican-themes">site</a>.</p>
+<p>I open Git Bash in order to clone the themes respository. I <code>cd</code> to my Users\Brian\virtualenvs\pelican directory in Git Bash. </p>
+<p>I then <code>cd</code> to pelican themes and enter the following to clone the respository into my directory.</p>
+<div class="highlight"><pre>git clone --recursive https://github.com/getpelican/pelican-themes.git
+</pre></div>
+
+
+<p>According to the Git <a href="http://git-scm.com/book/en/v2/Git-Tools-Submodules">docs</a> the <code>--recursive</code> command, </p>
+<blockquote>
+<p>If you pass --recursive to the git clone command, it will automatically initialize and update each submodule in the repository.</p>
+</blockquote>
+<p>I highly reccomend the youtube video <a href="https://www.youtube.com/watch?v=O72FWNeO-xY&amp;index=7&amp;list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD">Copying a GitHub Repository to Your Local Computer</a>
+if you have questions about the general process of cloning a repository.</p>
+<p>When I look at the directory in Windows Explorer, I see that under the pelican-themes folder, each theme is has a folder with its associated files.</p>
+<p>I get a little confused here because the instructions on the Git Hub pelican-themes site differ from the pelican docs.</p>
+<p>The Git Hub site states the following:</p>
+<blockquote>
+<p>To use one of the themes, edit your Pelican settings file to include this line:</p>
+</blockquote>
+<div class="highlight"><pre>THEME = &quot;/home/user/pelican-themes/theme-name&quot;
+</pre></div>
+
+
+<blockquote>
+<p>So, for instance, to use the mnmlist theme, you would edit your settings file to include:</p>
+</blockquote>
+<div class="highlight"><pre>THEME = &quot;/home/user/pelican-themes/mnmlist&quot;
+</pre></div>
+
+
+<p>I could not find any file that resembled a Pelican settings file. </p>
+<p>After reviewing a couple other blogs posts, especially <a href="http://terriyu.info/blog/posts/2013/07/pelican-setup/">http://terriyu.info/blog/posts/2013/07/pelican-setup/</a> 
+and <a href="http://www.circuidipity.com/pelican.html">http://www.circuidipity.com/pelican.html</a>.
+It seems the 'Pelican settings file remark' refers to the pelicanconf.py file.</p>
+<p>Later, I see that this issue is explained in the Pelican <a href="http://docs.getpelican.com/en/3.5.0/settings.html">docs</a> under the section <strong>Settings</strong>. The sections states:</p>
+<blockquote>
+<p>Pelican is configurable thanks to a settings file you can pass to the command line:</p>
+</blockquote>
+<div class="highlight"><pre>pelican content -s path/to/your/pelicanconf.py
+</pre></div>
+
+
+<blockquote>
+<p>(If you used the <code>pelican-quickstart</code> command, your primary settings file will be named <code>pelicanconf.py</code> by default.)</p>
+</blockquote>
+<p>After some time of playing around, I realize there are two ways to install a theme, via the command line only and via changing the <code>pelicanconf.py</code> file.</p>
+<p>The command line option</p>
+<hr />
+<p>As per the Pelican Themes <a href="http://docs.getpelican.com/en/3.5.0/pelican-themes.html">docs</a> sections, <strong>Installing themes</strong> and <strong>Listing the installed themes</strong>,
+I install a pelican theme and then use the -l command to make sure it is installed.</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican-themes --install C:\Users\Brian\virtualenvs\pelican\pel
+ican-themes\pelican-bootstrap3
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican-themes -l
+notmyidea
+pelican-bootstrap3
+simple
+</pre></div>
+
+
+<p>I also specify the theme directly with the -t command as per the GitHub <a href="https://github.com/getpelican/pelican-themes">page</a>.</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican -t pelican-bootstrap3
+Done: Processed 1 article(s), 0 draft(s) and 0 page(s) in 0.67 seconds.
+</pre></div>
+
+
+<p>I regenerate the content and run the simple server as follows:</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; cd output
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts\output&gt; python -m SimpleHTTPServer
+</pre></div>
+
+
+<p>I look on <a href="http://localhost:8000/">http://localhost:8000/</a>. <strong>Success!</strong></p>
+<p>Changing the pelicanconf.py file</p>
+<hr />
+<p>I then played with variations of configuring the theme in the pelicanconf.py file such as inserting:</p>
+<div class="highlight"><pre>THEME = &quot;C:/Users/Brian/virtualenvs/pelican/pelican-themes/blueidea&quot;
+</pre></div>
+
+
+<p>I run the commands:</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
+Done: Processed 0 article(s), 0 draft(s) and 4 page(s) in 1.49 seconds.
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; cd output
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts\output&gt; python -m SimpleHTTPServer
+</pre></div>
+
+
+<p>I look on <a href="http://localhost:8000/">http://localhost:8000/</a>. *<em>Success!</em></p></div>
+	</div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; rbrianaaron</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

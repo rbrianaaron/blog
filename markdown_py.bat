@@ -1,0 +1,1 @@
+@"C:\Users\Brian\virtualenvs\pelican\Scripts\python.exe" "C:\Users\Brian\virtualenvs\pelican\Scripts\markdown_py" %*
