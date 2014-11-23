@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="/" rel="alternate"></link><link href="/feeds%5Ctutorials.atom.xml" rel="self"></link><id>/</id><updated>2014-11-16T09:23:05-05:00</updated><entry><title>Insert Images in Your Pelican Page</title><link href="/insert-images-in-your-pelican-page.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:,2014-11-16:insert-images-in-your-pelican-page.html</id><summary type="html">&lt;p&gt;I thought it looked easy enough in the Pelican docs &lt;a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages"&gt;articles-and-pages&lt;/a&gt; section &lt;strong&gt;Linking to static files&lt;/strong&gt; section.&lt;/p&gt;
+&lt;p&gt;I placed two &lt;code&gt;.png&lt;/code&gt; images in the following directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;C:\Users\Brian\virtualenvs\pelican\Scripts\content\images
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I inserted the following scipt in my markdown file.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;![Alt Text]({filename}/images/output.png)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;When that didn't work, I tried:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;![Alt Text]({filename}C:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here are the errors I got:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican content
+WARNING: Unable to find `/images/output.png`, skipping url replacement.
+WARNING: Unable to find `/images/first.png`, skipping url replacement.
+Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.97 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican content
+WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png`, skipping url replacement.
+
+WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/first.png`, skipping url replacement.
+Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.29 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It's tough to be a novice. Okay, let's try and figure out what I was really suppossed to do.&lt;/p&gt;
+&lt;p&gt;I look at the &lt;a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages"&gt;docs&lt;/a&gt; section &lt;strong&gt;Linking to static files&lt;/strong&gt; again. 
+I was supposed to ensure that the &lt;code&gt;STATIC_PATHS&lt;/code&gt; setting in the &lt;code&gt;pelicanconf.py&lt;/code&gt; file includes images, for example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;STATIC_PATHS = [&amp;#39;images&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I make the correction and generate the content again. I get the same error.&lt;/p&gt;
+&lt;p&gt;I review the &lt;a href="http://docs.getpelican.com/en/3.5.0/content.html"&gt;Writing Content docs&lt;/a&gt; again, especially the following section in &lt;strong&gt;Linking to static files&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For example, a project’s content directory might be structured like this:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;content
++-- images
+¦   +-- han.jpg
++-- pdfs
+¦   +-- menu.pdf
++-- pages
+    +-- test.md
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I realize that my directory does not contain a pages folder. I add a pages folder and regenerate the page.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Success!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As I continue to play with directory structures, I discover that the above directory structure is not optimum. &lt;/p&gt;
+&lt;p&gt;The Pelican Writing Content &lt;a href="http://docs.getpelican.com/en/3.5.0/content.html?highlight=category"&gt;docs&lt;/a&gt; section &lt;strong&gt;Articles and pages&lt;/strong&gt; states:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Pelican considers “articles” to be chronological content, such as posts on a blog, and thus associated with a date.&lt;/p&gt;
+&lt;p&gt;The idea behind “pages” is that they are usually not temporal in nature and are used for content that does not change very often (e.g., “About” or “Contact” pages)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I corrected my structure to include three directories under the content directory: images, pages, and Tutorials. Here the Tutorials serves as category under which
+I'll put my articles.  &lt;/p&gt;</summary><category term="pelican"></category><category term="markdown"></category></entry><entry><title>Changing Pelican Themes</title><link href="/changing-pelican-themes.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:,2014-11-16:changing-pelican-themes.html</id><summary type="html">&lt;p&gt;This post will guide the reader on how to install and change Pelican themes. &lt;/p&gt;
+&lt;p&gt;This post is for complete novices like myself. It is not intended for experienced users.&lt;/p&gt;
+&lt;p&gt;CD to the Scripts directory of your project and activate the virtualenv. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;PS C:\Users\Brian&amp;gt; cd virtualenvs\pelican\Scripts
+PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; .\activate
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I tried the following commands as per the Pelican docs section 'pelican-themes'(http://docs.getpelican.com/en/3.5.0/pelican-themes.html).&lt;/p&gt;
+&lt;p&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican-themes -l
+notmyidea
+simple
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican-themes --list
+notmyidea
+simple&lt;/p&gt;
+&lt;p&gt;I have currently have two themes, 'notmyidea' and 'simple'.&lt;/p&gt;
+&lt;p&gt;Now how to install in a new theme?&lt;/p&gt;
+&lt;p&gt;I start my journey by going to http://pelican-themes-gallery.place.org/ to look at different themes. 
+I decided on the pelican-bootstrap3 theme.&lt;/p&gt;
+&lt;p&gt;I then review the information on the GitHub pelican-themes &lt;a href="https://github.com/getpelican/pelican-themes"&gt;site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I open Git Bash in order to clone the themes respository. I &lt;code&gt;cd&lt;/code&gt; to my Users\Brian\virtualenvs\pelican directory in Git Bash. &lt;/p&gt;
+&lt;p&gt;I then &lt;code&gt;cd&lt;/code&gt; to pelican themes and enter the following to clone the respository into my directory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git clone --recursive https://github.com/getpelican/pelican-themes.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;According to the Git &lt;a href="http://git-scm.com/book/en/v2/Git-Tools-Submodules"&gt;docs&lt;/a&gt; the &lt;code&gt;--recursive&lt;/code&gt; command, &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you pass --recursive to the git clone command, it will automatically initialize and update each submodule in the repository.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I highly reccomend the youtube video &lt;a href="https://www.youtube.com/watch?v=O72FWNeO-xY&amp;amp;index=7&amp;amp;list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD"&gt;Copying a GitHub Repository to Your Local Computer&lt;/a&gt;
+if you have questions about the general process of cloning a repository.&lt;/p&gt;
+&lt;p&gt;When I look at the directory in Windows Explorer, I see that under the pelican-themes folder, each theme is has a folder with its associated files.&lt;/p&gt;
+&lt;p&gt;I get a little confused here because the instructions on the Git Hub pelican-themes site differ from the pelican docs.&lt;/p&gt;
+&lt;p&gt;The Git Hub site states the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To use one of the themes, edit your Pelican settings file to include this line:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;THEME = &amp;quot;/home/user/pelican-themes/theme-name&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;So, for instance, to use the mnmlist theme, you would edit your settings file to include:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;THEME = &amp;quot;/home/user/pelican-themes/mnmlist&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I could not find any file that resembled a Pelican settings file. &lt;/p&gt;
+&lt;p&gt;After reviewing a couple other blogs posts, especially &lt;a href="http://terriyu.info/blog/posts/2013/07/pelican-setup/"&gt;http://terriyu.info/blog/posts/2013/07/pelican-setup/&lt;/a&gt; 
+and &lt;a href="http://www.circuidipity.com/pelican.html"&gt;http://www.circuidipity.com/pelican.html&lt;/a&gt;.
+It seems the 'Pelican settings file remark' refers to the pelicanconf.py file.&lt;/p&gt;
+&lt;p&gt;Later, I see that this issue is explained in the Pelican &lt;a href="http://docs.getpelican.com/en/3.5.0/settings.html"&gt;docs&lt;/a&gt; under the section &lt;strong&gt;Settings&lt;/strong&gt;. The sections states:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Pelican is configurable thanks to a settings file you can pass to the command line:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pelican content -s path/to/your/pelicanconf.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;(If you used the &lt;code&gt;pelican-quickstart&lt;/code&gt; command, your primary settings file will be named &lt;code&gt;pelicanconf.py&lt;/code&gt; by default.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After some time of playing around, I realize there are two ways to install a theme, via the command line only and via changing the &lt;code&gt;pelicanconf.py&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;The command line option&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;As per the Pelican Themes &lt;a href="http://docs.getpelican.com/en/3.5.0/pelican-themes.html"&gt;docs&lt;/a&gt; sections, &lt;strong&gt;Installing themes&lt;/strong&gt; and &lt;strong&gt;Listing the installed themes&lt;/strong&gt;,
+I install a pelican theme and then use the -l command to make sure it is installed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican-themes --install C:\Users\Brian\virtualenvs\pelican\pel
+ican-themes\pelican-bootstrap3
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican-themes -l
+notmyidea
+pelican-bootstrap3
+simple
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I also specify the theme directly with the -t command as per the GitHub &lt;a href="https://github.com/getpelican/pelican-themes"&gt;page&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican -t pelican-bootstrap3
+Done: Processed 1 article(s), 0 draft(s) and 0 page(s) in 0.67 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I regenerate the content and run the simple server as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; cd output
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts\output&amp;gt; python -m SimpleHTTPServer
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I look on &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;. &lt;strong&gt;Success!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Changing the pelicanconf.py file&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;I then played with variations of configuring the theme in the pelicanconf.py file such as inserting:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;THEME = &amp;quot;C:/Users/Brian/virtualenvs/pelican/pelican-themes/blueidea&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I run the commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican content
+Done: Processed 0 article(s), 0 draft(s) and 4 page(s) in 1.49 seconds.
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; cd output
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts\output&amp;gt; python -m SimpleHTTPServer
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I look on &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;. &lt;strong&gt;Success!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Pelican"></category></entry><entry><title>Pelican Setup Tutorial for Windows</title><link href="/pelican-setup-tutorial-windows.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:,2014-11-16:pelican-setup-tutorial-windows.html</id><summary type="html">&lt;p&gt;The Pelican documentation for installing Pelican, while well written, does not include specific information for Windows users. For the experienced, this may not be a problem and this post is not for them.
+This post is for novices, like myself. I hope it helps. &lt;/p&gt;
+&lt;p&gt;This post will show the reader how to create a Pelican skeleton project from installing the virtualenv and Pelican to previewing the first test page.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; This post assumes that you have installed Python, setuptools, pip, and virtualenv.&lt;/p&gt;
+&lt;p&gt;The Pelican documents recommend the following commands for installing Pelican in a virtualenv:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;virtualenv ~/virtualenvs/pelican
+CD ~/virtualenvs/pelican
+source bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In Windows Powershell, I ran the first line and received the following feedback:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;PS C:\Python27&amp;gt; virtualenv ~/virtualenvs/pelican
+New python executable in ~/virtualenvs/pelican\Scripts\python.exe
+Installing setuptools, pip...done.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;However, the directory was not made in the home directory. The directory was located at:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;C:\Python27\~\virtualenvs\pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let's try again with the following commands in Windows Powershell:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;PS C:\Users\Brian&amp;gt; virtualenv virtualenvs/pelican
+New python executable in virtualenvs/pelican\Scripts\python.exe
+Installing setuptools, pip...done.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The directory is now in &lt;code&gt;C:\Users\Brian\virtualenvs\pelican&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I then moved to the pelican directory to run the &lt;code&gt;source bin/activate&lt;/code&gt; command which resulted in the following error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;PS&lt;/span&gt; &lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;Users&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;Brian&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;virtualenvs&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;source&lt;/span&gt; &lt;span class="nx"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;activate&lt;/span&gt;
+&lt;span class="nx"&gt;source&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;The&lt;/span&gt; &lt;span class="nx"&gt;term&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;source&amp;#39;&lt;/span&gt; &lt;span class="nx"&gt;is&lt;/span&gt; &lt;span class="nx"&gt;not&lt;/span&gt; &lt;span class="nx"&gt;recognized&lt;/span&gt; &lt;span class="nx"&gt;as&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="nx"&gt;of&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="nx"&gt;cmdlet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;script&lt;/span&gt; &lt;span class="nx"&gt;file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;or&lt;/span&gt; &lt;span class="nx"&gt;operable&lt;/span&gt; &lt;span class="nx"&gt;program&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="nx"&gt;Check&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;spelling&lt;/span&gt; &lt;span class="nx"&gt;of&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;or&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="nx"&gt;was&lt;/span&gt; &lt;span class="nx"&gt;included&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;verify&lt;/span&gt; &lt;span class="nx"&gt;that&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="nx"&gt;is&lt;/span&gt; &lt;span class="nx"&gt;correct&lt;/span&gt; &lt;span class="nx"&gt;and&lt;/span&gt; &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="nx"&gt;again&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="nx"&gt;At&lt;/span&gt; &lt;span class="nx"&gt;line&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="kr"&gt;char&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;source&lt;/span&gt; &lt;span class="nx"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;activate&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;~~~~~~&lt;/span&gt;
+    &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;CategoryInfo&lt;/span&gt;          &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;ObjectNotFound&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;source&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="cp"&gt;[]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;CommandNotFoundException&lt;/span&gt;
+    &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;FullyQualifiedErrorId&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;CommandNotFoundException&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;a href="http://virtualenv.readthedocs.org/en/latest/virtualenv.html"&gt;virtualenv docs&lt;/a&gt; section &lt;strong&gt;activate script&lt;/strong&gt;
+and its &lt;strong&gt;!Note&lt;/strong&gt; section for Windows users explains how to change the execution policies to allow Windows to activate 
+the environment. &lt;/p&gt;
+&lt;p&gt;Here are the commands that I used along with errors I received along the way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;PS C:\&amp;gt; Set-ExecutionPolicy RemoteSigned
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is &amp;quot;Y&amp;quot;): Y
+Set-ExecutionPolicy : Access to the registry key
+&amp;#39;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell&amp;#39; is denied. To change the execution
+policy for the default (LocalMachine) scope, start Windows PowerShell with the &amp;quot;Run as administrator&amp;quot; option. To
+change the execution policy for the current user, run &amp;quot;Set-ExecutionPolicy -Scope CurrentUser&amp;quot;.
+At line:1 char:1
++ Set-ExecutionPolicy RemoteSigned
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (:) [Set-ExecutionPolicy], UnauthorizedAccessException
+    + FullyQualifiedErrorId : System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.SetExecutionPolicyComma
+   nd
+PS C:\&amp;gt; Set-ExecutionPolicy -Scope CurrentUser
+
+cmdlet Set-ExecutionPolicy at command pipeline position 1
+Supply values for the following parameters:
+ExecutionPolicy: RemoteSigned
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is &amp;quot;Y&amp;quot;): Y
+
+PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; .\activate
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, I can now pip install Pelican:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pip install pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I will also install the two optional packages, Markdown and Typogrify.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pip install Markdown
+
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pip install typogrify
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I will now try to run the pelican-quickstart command. My intention is to place the blog on my github page, so I answered those questions as yes. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican-quickstart
+Welcome to pelican-quickstart v3.5.0.
+
+This script will help you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files
+needed by Pelican.
+
+
+&amp;gt; Where do you want to create your new web site? [.]
+&amp;gt; What will be the title of this web site? rbrianaaron
+&amp;gt; Who will be the author of this web site? rbrianaaron
+&amp;gt; What will be the default language of this web site? [en]
+&amp;gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) N
+&amp;gt; Do you want to enable article pagination? (Y/n)
+&amp;gt; How many articles per page do you want? [10]
+&amp;gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)
+&amp;gt; Do you want an auto-reload &amp;amp; simpleHTTP script to assist with theme and site development? (Y/n)
+&amp;gt; Do you want to upload your website using FTP? (y/N)
+&amp;gt; Do you want to upload your website using SSH? (y/N)
+&amp;gt; Do you want to upload your website using Dropbox? (y/N)
+&amp;gt; Do you want to upload your website using S3? (y/N)
+&amp;gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)
+&amp;gt; Do you want to upload your website using GitHub Pages? (y/N) Y
+&amp;gt; Is this your personal page (username.github.io)? (y/N) Y
+Done. Your new project is available at C:\Users\Brian\virtualenvs\pelican\Scripts
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The Pelican docs show this 'hierarchy':&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;yourproject/
++-- content
+¦   +-- (pages)
++-- output
++-- develop_server.sh
++-- fabfile.py
++-- Makefile
++-- pelicanconf.py       # Main settings file
++-- publishconf.py       # Settings to use when ready to publish
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I expected to see something similar on my computer screen (I am a novice after all). I did not. However, when I reviewed the directory in 
+Windows explorer, I did note that each of the items, in addition to many others, is listed in the Scripts folder, and they were the most recently created.&lt;/p&gt;
+&lt;p&gt;I read the next section of the documentation &lt;a href="http://docs.getpelican.com/en/3.5.0/content.html"&gt;Writing Content&lt;/a&gt; , but I felt intimidated, so 
+I returned to &lt;a href="http://docs.getpelican.com/en/3.5.0/quickstart.html"&gt;Quickstart&lt;/a&gt;, section &lt;strong&gt;Create an Article&lt;/strong&gt;. &lt;/p&gt;
+&lt;p&gt;I used NotePad and saved a file with a .md extension to &lt;code&gt;C:\Users\Brian\virtualenvs\pelican\Scripts\content&lt;/code&gt;. 
+The file contained:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;First&lt;/span&gt; &lt;span class="n"&gt;Page&lt;/span&gt;
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;36&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Stuff&lt;/span&gt;
+
+&lt;span class="n"&gt;Following&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I then ran the &lt;code&gt;pelican&lt;/code&gt; command as instructed under the &lt;strong&gt;Generate your site&lt;/strong&gt; section.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; pelican content
+Done: Processed 1 article(s), 0 draft(s) and 0 page(s) in 0.90 seconds.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Note. If the virtualenv is not activated and you run this command you will get the following error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;PS&lt;/span&gt; &lt;span class="nx"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;Users&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;Brian&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;virtualenvs&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;pelican&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nx"&gt;Scripts&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;pelican&lt;/span&gt; &lt;span class="nx"&gt;content&lt;/span&gt;
+&lt;span class="nx"&gt;Pelican&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;The&lt;/span&gt; &lt;span class="nx"&gt;term&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pelican&amp;#39;&lt;/span&gt; &lt;span class="nx"&gt;is&lt;/span&gt; &lt;span class="nx"&gt;not&lt;/span&gt; &lt;span class="nx"&gt;recognized&lt;/span&gt; &lt;span class="nx"&gt;as&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="nx"&gt;of&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="nx"&gt;cmdlet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;script&lt;/span&gt; &lt;span class="nx"&gt;file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;or&lt;/span&gt; &lt;span class="nx"&gt;operable&lt;/span&gt; &lt;span class="nx"&gt;program&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="nx"&gt;Check&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;spelling&lt;/span&gt; &lt;span class="nx"&gt;of&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;or&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="nx"&gt;was&lt;/span&gt; &lt;span class="nx"&gt;included&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;verify&lt;/span&gt; &lt;span class="nx"&gt;that&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="nx"&gt;is&lt;/span&gt; &lt;span class="nx"&gt;correct&lt;/span&gt; &lt;span class="nx"&gt;and&lt;/span&gt; &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="nx"&gt;again&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="nx"&gt;At&lt;/span&gt; &lt;span class="nx"&gt;line&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="kr"&gt;char&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;pelican&lt;/span&gt; &lt;span class="nx"&gt;content&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="o"&gt;~~~~~~~&lt;/span&gt;
+    &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;CategoryInfo&lt;/span&gt;          &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;ObjectNotFound&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="cp"&gt;[]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;CommandNotFoundException&lt;/span&gt;
+    &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;FullyQualifiedErrorId&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;CommandNotFoundException&lt;/span&gt;
+
+
+&lt;span class="nx"&gt;Suggestion&lt;/span&gt; &lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;General&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;The&lt;/span&gt; &lt;span class="nx"&gt;command&lt;/span&gt; &lt;span class="nx"&gt;pelican&lt;/span&gt; &lt;span class="nx"&gt;was&lt;/span&gt; &lt;span class="nx"&gt;not&lt;/span&gt; &lt;span class="nx"&gt;found&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;but&lt;/span&gt; &lt;span class="nx"&gt;does&lt;/span&gt; &lt;span class="nx"&gt;exist&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;current&lt;/span&gt; &lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="nx"&gt;Windows&lt;/span&gt; &lt;span class="nx"&gt;PowerShell&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="nx"&gt;es&lt;/span&gt; &lt;span class="nx"&gt;not&lt;/span&gt; &lt;span class="nx"&gt;load&lt;/span&gt; &lt;span class="nx"&gt;commands&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;current&lt;/span&gt; &lt;span class="nx"&gt;location&lt;/span&gt; &lt;span class="nx"&gt;by&lt;/span&gt; &lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="nx"&gt;If&lt;/span&gt; &lt;span class="nx"&gt;you&lt;/span&gt; &lt;span class="nx"&gt;trust&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt; &lt;span class="nx"&gt;command&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;instead&lt;/span&gt; &lt;span class="nx"&gt;type&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;.\pelican&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="nx"&gt;See&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;get&lt;/span&gt;
+&lt;span class="s2"&gt;-help about_Command_Precedence&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nx"&gt;more&lt;/span&gt; &lt;span class="nx"&gt;details&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Rerun the command as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt; .\pelican content
+Done: Processed 1 article(s), 0 draft(s) and 0 page(s) in 4.85 seconds.
+PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I looked into the content folder and saw the following:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="/images/output.png" /&gt;&lt;/p&gt;
+&lt;p&gt;As per &lt;strong&gt;Preview your site&lt;/strong&gt; section of the &lt;a href="http://docs.getpelican.com/en/3.5.0/quickstart.html"&gt;Quickstart&lt;/a&gt; page, 
+I changed directories to my &lt;strong&gt;output&lt;/strong&gt; directory and ran the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;PS C:\Users\Brian\virtualenvs\pelican\Scripts\output&amp;gt; python -m SimpleHTTPServer
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The result was:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Serving HTTP on 0.0.0.0 port 8000 ...
+127.0.0.1 - - [12/Nov/2014 09:10:55] &amp;quot;GET / HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &amp;quot;GET /theme/css/main.css HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &amp;quot;GET /theme/css/reset.css HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &amp;quot;GET /theme/css/pygment.css HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &amp;quot;GET /theme/css/typogrify.css HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] code 404, message File not found
+127.0.0.1 - - [12/Nov/2014 09:10:56] &amp;quot;GET /favicon.ico HTTP/1.1&amp;quot; 404 -
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On the &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt; site in my web browser, I found:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="/images/first.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;strong&gt;Success!&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lesson Learned&lt;/strong&gt;&lt;/p&gt;</summary><category term="Pelican"></category></entry></feed>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pelican Setup Tutorial for Windows</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="rbrianaaron">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="/theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="/" type="application/atom+xml" rel="alternate" title="rbrianaaron ATOM Feed" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">rbrianaaron </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li><a href="/pages/about.html">About</a></li>
+                          <li class="divider-vertical"></li>
+                  <li class="active">
+                    <a href="/category/tutorials.html">
+						<i class="icon-folder-open icon-large"></i>Tutorials
+					</a>
+                  </li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to Pelican Setup Tutorial for Windows">
+                                        Pelican Setup Tutorial for Windows
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2014-11-16T09:23:05.256999-05:00">
+        <i class="icon-calendar"></i>Sun 16 November 2014
+</abbr>
+<span class="label">By</span>
+<a href="/author/rbrianaaron.html"><i class="icon-user"></i>rbrianaaron</a>
+<span class="label">Category</span>
+<a href="/category/tutorials.html"><i class="icon-folder-open"></i>Tutorials</a>.
+
+
+</footer><!-- /.post-info -->                </div>
+                <p>Category: Tutorials
+Tags: Pelican
+Slug: pelican-setup-tutorial-windows
+Author: Brian Aaron
+Summary: A tutorial to create a skeleton Python Pelican project from installing a Python virtualenv and Pelican, to Pelican quickstart, to previewing the first test page.</p>
+<p>The Pelican documentation for installing Pelican, while well written, does not include specific information for Windows users. For the experienced, this may not be a problem and this post is not for them.
+This post is for novices, like myself. I hope it helps. </p>
+<p>This post will show the reader how to create a Pelican skeleton project from installing the virtualenv and Pelican to previewing the first test page.</p>
+<p><strong>Note</strong> This post assumes that you have installed Python, setuptools, pip, and virtualenv.</p>
+<p>The Pelican documents recommend the following commands for installing Pelican in a virtualenv:</p>
+<div class="highlight"><pre>virtualenv ~/virtualenvs/pelican
+CD ~/virtualenvs/pelican
+source bin/activate
+</pre></div>
+
+
+<p>In Windows Powershell, I ran the first line and received the following feedback:</p>
+<div class="highlight"><pre>PS C:\Python27&gt; virtualenv ~/virtualenvs/pelican
+New python executable in ~/virtualenvs/pelican\Scripts\python.exe
+Installing setuptools, pip...done.
+</pre></div>
+
+
+<p>However, the directory was not made in the home directory. The directory was located at:</p>
+<div class="highlight"><pre>C:\Python27\~\virtualenvs\pelican
+</pre></div>
+
+
+<p>Let's try again with the following commands in Windows Powershell:</p>
+<div class="highlight"><pre>PS C:\Users\Brian&gt; virtualenv virtualenvs/pelican
+New python executable in virtualenvs/pelican\Scripts\python.exe
+Installing setuptools, pip...done.
+</pre></div>
+
+
+<p>The directory is now in <code>C:\Users\Brian\virtualenvs\pelican</code>.</p>
+<p>I then moved to the pelican directory to run the <code>source bin/activate</code> command which resulted in the following error:</p>
+<div class="highlight"><pre><span class="nx">PS</span> <span class="nx">C</span><span class="o">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brian</span><span class="err">\</span><span class="nx">virtualenvs</span><span class="err">\</span><span class="nx">pelican</span><span class="o">&gt;</span> <span class="nx">source</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">activate</span>
+<span class="nx">source</span> <span class="o">:</span> <span class="nx">The</span> <span class="nx">term</span> <span class="s1">&#39;source&#39;</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">recognized</span> <span class="nx">as</span> <span class="nx">the</span> <span class="nx">name</span> <span class="nx">of</span> <span class="nx">a</span> <span class="nx">cmdlet</span><span class="p">,</span> <span class="kd">function</span><span class="p">,</span> <span class="nx">script</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">or</span> <span class="nx">operable</span> <span class="nx">program</span><span class="p">.</span>
+<span class="nx">Check</span> <span class="nx">the</span> <span class="nx">spelling</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">or</span> <span class="k">if</span> <span class="nx">a</span> <span class="nx">path</span> <span class="nx">was</span> <span class="nx">included</span><span class="p">,</span> <span class="nx">verify</span> <span class="nx">that</span> <span class="nx">the</span> <span class="nx">path</span> <span class="nx">is</span> <span class="nx">correct</span> <span class="nx">and</span> <span class="k">try</span> <span class="nx">again</span><span class="p">.</span>
+<span class="nx">At</span> <span class="nx">line</span><span class="o">:</span><span class="mi">1</span> <span class="kr">char</span><span class="o">:</span><span class="mi">1</span>
+<span class="o">+</span> <span class="nx">source</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">activate</span>
+<span class="o">+</span> <span class="o">~~~~~~</span>
+    <span class="o">+</span> <span class="nx">CategoryInfo</span>          <span class="o">:</span> <span class="nx">ObjectNotFound</span><span class="o">:</span> <span class="p">(</span><span class="nx">source</span><span class="o">:</span><span class="nb">String</span><span class="p">)</span> <span class="cp">[]</span><span class="p">,</span> <span class="nx">CommandNotFoundException</span>
+    <span class="o">+</span> <span class="nx">FullyQualifiedErrorId</span> <span class="o">:</span> <span class="nx">CommandNotFoundException</span>
+</pre></div>
+
+
+<p>The <a href="http://virtualenv.readthedocs.org/en/latest/virtualenv.html">virtualenv docs</a> section <strong>activate script</strong>
+and its <strong>!Note</strong> section for Windows users explains how to change the execution policies to allow Windows to activate 
+the environment. </p>
+<p>Here are the commands that I used along with errors I received along the way:</p>
+<div class="highlight"><pre>PS C:\&gt; Set-ExecutionPolicy RemoteSigned
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is &quot;Y&quot;): Y
+Set-ExecutionPolicy : Access to the registry key
+&#39;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell&#39; is denied. To change the execution
+policy for the default (LocalMachine) scope, start Windows PowerShell with the &quot;Run as administrator&quot; option. To
+change the execution policy for the current user, run &quot;Set-ExecutionPolicy -Scope CurrentUser&quot;.
+At line:1 char:1
++ Set-ExecutionPolicy RemoteSigned
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (:) [Set-ExecutionPolicy], UnauthorizedAccessException
+    + FullyQualifiedErrorId : System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.SetExecutionPolicyComma
+   nd
+PS C:\&gt; Set-ExecutionPolicy -Scope CurrentUser
+
+cmdlet Set-ExecutionPolicy at command pipeline position 1
+Supply values for the following parameters:
+ExecutionPolicy: RemoteSigned
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is &quot;Y&quot;): Y
+
+PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; .\activate
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt;
+</pre></div>
+
+
+<p>Now, I can now pip install Pelican:</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pip install pelican
+</pre></div>
+
+
+<p>I will also install the two optional packages, Markdown and Typogrify.</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pip install Markdown
+
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pip install typogrify
+</pre></div>
+
+
+<p>I will now try to run the pelican-quickstart command. My intention is to place the blog on my github page, so I answered those questions as yes. </p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican-quickstart
+Welcome to pelican-quickstart v3.5.0.
+
+This script will help you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files
+needed by Pelican.
+
+
+&gt; Where do you want to create your new web site? [.]
+&gt; What will be the title of this web site? rbrianaaron
+&gt; Who will be the author of this web site? rbrianaaron
+&gt; What will be the default language of this web site? [en]
+&gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) N
+&gt; Do you want to enable article pagination? (Y/n)
+&gt; How many articles per page do you want? [10]
+&gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n)
+&gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n)
+&gt; Do you want to upload your website using FTP? (y/N)
+&gt; Do you want to upload your website using SSH? (y/N)
+&gt; Do you want to upload your website using Dropbox? (y/N)
+&gt; Do you want to upload your website using S3? (y/N)
+&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)
+&gt; Do you want to upload your website using GitHub Pages? (y/N) Y
+&gt; Is this your personal page (username.github.io)? (y/N) Y
+Done. Your new project is available at C:\Users\Brian\virtualenvs\pelican\Scripts
+(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt;
+</pre></div>
+
+
+<p>The Pelican docs show this 'hierarchy':</p>
+<div class="highlight"><pre>yourproject/
++-- content
+¦   +-- (pages)
++-- output
++-- develop_server.sh
++-- fabfile.py
++-- Makefile
++-- pelicanconf.py       # Main settings file
++-- publishconf.py       # Settings to use when ready to publish
+</pre></div>
+
+
+<p>I expected to see something similar on my computer screen (I am a novice after all). I did not. However, when I reviewed the directory in 
+Windows explorer, I did note that each of the items, in addition to many others, is listed in the Scripts folder, and they were the most recently created.</p>
+<p>I read the next section of the documentation <a href="http://docs.getpelican.com/en/3.5.0/content.html">Writing Content</a> , but I felt intimidated, so 
+I returned to <a href="http://docs.getpelican.com/en/3.5.0/quickstart.html">Quickstart</a>, section <strong>Create an Article</strong>. </p>
+<p>I used NotePad and saved a file with a .md extension to <code>C:\Users\Brian\virtualenvs\pelican\Scripts\content</code>. 
+The file contained:</p>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="n">First</span> <span class="n">Page</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">12</span> <span class="mi">8</span><span class="o">:</span><span class="mi">36</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Stuff</span>
+
+<span class="n">Following</span> <span class="k">is</span> <span class="n">my</span> <span class="n">first</span> <span class="n">page</span><span class="o">.</span>
+</pre></div>
+
+
+<p>I then ran the <code>pelican</code> command as instructed under the <strong>Generate your site</strong> section.</p>
+<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
+Done: Processed 1 article(s), 0 draft(s) and 0 page(s) in 0.90 seconds.
+</pre></div>
+
+
+<p>Note. If the virtualenv is not activated and you run this command you will get the following error:</p>
+<div class="highlight"><pre><span class="nx">PS</span> <span class="nx">C</span><span class="o">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brian</span><span class="err">\</span><span class="nx">virtualenvs</span><span class="err">\</span><span class="nx">pelican</span><span class="err">\</span><span class="nx">Scripts</span><span class="o">&gt;</span> <span class="nx">pelican</span> <span class="nx">content</span>
+<span class="nx">Pelican</span> <span class="o">:</span> <span class="nx">The</span> <span class="nx">term</span> <span class="s1">&#39;pelican&#39;</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">recognized</span> <span class="nx">as</span> <span class="nx">the</span> <span class="nx">name</span> <span class="nx">of</span> <span class="nx">a</span> <span class="nx">cmdlet</span><span class="p">,</span> <span class="kd">function</span><span class="p">,</span> <span class="nx">script</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">or</span> <span class="nx">operable</span> <span class="nx">program</span><span class="p">.</span>
+<span class="nx">Check</span> <span class="nx">the</span> <span class="nx">spelling</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">or</span> <span class="k">if</span> <span class="nx">a</span> <span class="nx">path</span> <span class="nx">was</span> <span class="nx">included</span><span class="p">,</span> <span class="nx">verify</span> <span class="nx">that</span> <span class="nx">the</span> <span class="nx">path</span> <span class="nx">is</span> <span class="nx">correct</span> <span class="nx">and</span> <span class="k">try</span> <span class="nx">again</span><span class="p">.</span>
+<span class="nx">At</span> <span class="nx">line</span><span class="o">:</span><span class="mi">1</span> <span class="kr">char</span><span class="o">:</span><span class="mi">1</span>
+<span class="o">+</span> <span class="nx">pelican</span> <span class="nx">content</span>
+<span class="o">+</span> <span class="o">~~~~~~~</span>
+    <span class="o">+</span> <span class="nx">CategoryInfo</span>          <span class="o">:</span> <span class="nx">ObjectNotFound</span><span class="o">:</span> <span class="p">(</span><span class="nx">pelican</span><span class="o">:</span><span class="nb">String</span><span class="p">)</span> <span class="cp">[]</span><span class="p">,</span> <span class="nx">CommandNotFoundException</span>
+    <span class="o">+</span> <span class="nx">FullyQualifiedErrorId</span> <span class="o">:</span> <span class="nx">CommandNotFoundException</span>
+
+
+<span class="nx">Suggestion</span> <span class="cp">[</span><span class="mi">3</span><span class="p">,</span><span class="nx">General</span><span class="cp">]</span><span class="o">:</span> <span class="nx">The</span> <span class="nx">command</span> <span class="nx">pelican</span> <span class="nx">was</span> <span class="nx">not</span> <span class="nx">found</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">does</span> <span class="nx">exist</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">location</span><span class="p">.</span> <span class="nx">Windows</span> <span class="nx">PowerShell</span> <span class="k">do</span>
+<span class="nx">es</span> <span class="nx">not</span> <span class="nx">load</span> <span class="nx">commands</span> <span class="nx">from</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">location</span> <span class="nx">by</span> <span class="k">default</span><span class="p">.</span> <span class="nx">If</span> <span class="nx">you</span> <span class="nx">trust</span> <span class="k">this</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">instead</span> <span class="nx">type</span> <span class="s2">&quot;.\pelican&quot;</span><span class="p">.</span> <span class="nx">See</span> <span class="s2">&quot;get</span>
+<span class="s2">-help about_Command_Precedence&quot;</span> <span class="k">for</span> <span class="nx">more</span> <span class="nx">details</span><span class="p">.</span>
+</pre></div>
+
+
+<p>Rerun the command as follows:</p>
+<div class="highlight"><pre>PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; .\pelican content
+Done: Processed 1 article(s), 0 draft(s) and 0 page(s) in 4.85 seconds.
+PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt;
+</pre></div>
+
+
+<p>I looked into the content folder and saw the following:</p>
+<p><img alt="Alt Text" src="/images/output.png" /></p>
+<p>As per <strong>Preview your site</strong> section of the <a href="http://docs.getpelican.com/en/3.5.0/quickstart.html">Quickstart</a> page, 
+I changed directories to my <strong>output</strong> directory and ran the following command:</p>
+<div class="highlight"><pre>PS C:\Users\Brian\virtualenvs\pelican\Scripts\output&gt; python -m SimpleHTTPServer
+</pre></div>
+
+
+<p>The result was:</p>
+<div class="highlight"><pre>Serving HTTP on 0.0.0.0 port 8000 ...
+127.0.0.1 - - [12/Nov/2014 09:10:55] &quot;GET / HTTP/1.1&quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &quot;GET /theme/css/main.css HTTP/1.1&quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &quot;GET /theme/css/reset.css HTTP/1.1&quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &quot;GET /theme/css/pygment.css HTTP/1.1&quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] &quot;GET /theme/css/typogrify.css HTTP/1.1&quot; 200 -
+127.0.0.1 - - [12/Nov/2014 09:10:56] code 404, message File not found
+127.0.0.1 - - [12/Nov/2014 09:10:56] &quot;GET /favicon.ico HTTP/1.1&quot; 404 -
+</pre></div>
+
+
+<p>On the <a href="http://localhost:8000/">http://localhost:8000/</a> site in my web browser, I found:</p>
+<p><img alt="Alt Text" src="/images/first.png" /></p>
+<p><strong><strong>Success!</strong></strong></p>
+<p><strong>Lesson Learned</strong></p>
+                </div><!-- /.entry-content -->
+        </article>
+</section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://getpelican.com/"><i class="icon-external-link"></i>Pelican</a></li>
+    <li><a href="http://python.org/"><i class="icon-external-link"></i>Python.org</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="https://github.com/rbrianaaron"><i class="icon-Github-sign icon-large"></i>Github</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/tutorials.html">
+    <i class="icon-folder-open icon-large"></i>Tutorials
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
