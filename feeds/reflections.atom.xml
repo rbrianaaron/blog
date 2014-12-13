@@ -1,57 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="http://rbrianaaron.github.io/blog/" rel="alternate"></link><link href="http://rbrianaaron.github.io/blog/feeds%5Creflections.atom.xml" rel="self"></link><id>http://rbrianaaron.github.io/blog/</id><updated>2014-11-25T08:54:46-05:00</updated><entry><title>Data type versus mode of variable</title><link href="http://rbrianaaron.github.io/blog/data-type-versus-mode-of-varaible.html" rel="alternate"></link><updated>2014-11-25T08:54:46-05:00</updated><author><name>Brian Aaron</name></author><id>tag:rbrianaaron.github.io,2014-11-25:blog/data-type-versus-mode-of-varaible.html</id><summary type="html">&lt;p&gt;In R, the function 'mode(variable name or object)' will tell you the data type in a similar way that in Python the function 'type(variable name or object).&lt;/p&gt;</summary><category term="Python"></category><category term="R"></category></entry><entry><title>Arrays in Python and R</title><link href="http://rbrianaaron.github.io/blog/arrays-in-python-r.html" rel="alternate"></link><updated>2014-11-19T09:05:24-05:00</updated><author><name>Brian Aaron</name></author><id>tag:rbrianaaron.github.io,2014-11-19:blog/arrays-in-python-r.html</id><summary type="html">&lt;p&gt;This post is a learning reflection on arrays in Python versus R. It is to help me sort out the differeces and similariteis betweent two in my mind.&lt;/p&gt;
-&lt;p&gt;In basic Python, there is no array. There are lists though. One could create two lists and then iterate over them, add the two numbers together, and place them in list.
-For example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;a = [1,2,3]
-b = [4,5,6]
-new = []
-for i, item in enumerate(c):
-    new.append(a[i] + b[i]) 
-print new
-
-[5, 7, 9]
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;With Python Numpy, arrays are much simpler. One imports numpy and passes a list of numbers to the array function, for example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;a = np.array([1,2,3])
-b = np.array([4,5,6])
-print a+b
-
-[5 7 9]
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;The result seems like list, but upon calling type() and inpecting it is also a numpy array.&lt;/p&gt;
-&lt;p&gt;In R, the following is the syntax:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; b &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;+&lt;/span&gt; b
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;9&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;I am not sure how R holds the results of arrays that are added together. Hmmmm&lt;/p&gt;
-&lt;p&gt;How about other types of operations, for example a boolean comparison. The syntax appears to be the same. In Python Numpy:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;a = np.array([1,2,3])
-b = np.array([4,5,6])
-print a == b
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;In R:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; b &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;==&lt;/span&gt; b
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Square root in Python Numpy:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;print np.sqrt(a)
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;In R:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt; sqrt(a)
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="R"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="http://rbrianaaron.github.io/blog/" rel="alternate"></link><link href="http://rbrianaaron.github.io/blog/feeds%5Creflections.atom.xml" rel="self"></link><id>http://rbrianaaron.github.io/blog/</id><updated>2014-12-08T09:05:54-05:00</updated><entry><title>A Review of R Programing on Coursera</title><link href="http://rbrianaaron.github.io/blog/review-of-R-programing-on=coursera.html" rel="alternate"></link><updated>2014-12-08T09:05:54-05:00</updated><author><name>Brian Aaron</name></author><id>tag:rbrianaaron.github.io,2014-12-08:blog/review-of-R-programing-on=coursera.html</id><summary type="html">&lt;p&gt;I took the December 2014 offering of the The R Programming course on Cousera. It is the second course of the John Hopkin's Data Science Specialization.&lt;/p&gt;
+&lt;p&gt;My first impression was, 'Wow, a lot of people fail and retake the course' because at least three people posted that it was there second, third, or even fourth time 
+that they were retaking the course. I don't actually know how many people fail the course because I have not seen the data.&lt;/p&gt;
+&lt;p&gt;I can say that of the posters who said they were retaking the course, none of them had previously learned a programming language. The course says that the only 
+prerequisite is the first course in the series, the Data Scientist's Toolbox. If it were me, I think I would have at least said that previous knowledge of programming
+language would be beneficial for at least two reasons.&lt;/p&gt;
+&lt;p&gt;The first reason is that the instructor, in the videos, tends to give a high level overview of the idea he is presenting and then gives one example on the slides.
+This style is not unreasonable and is actually quite common. For someone who had a grasp of the main computer science concepts in another language, it is really
+more than enough information. In other classes that I have taken, the instructor will walk students through typing in each command and explaining the reasons for
+the results. I found and still find this style very helpful in learning new programming skills. This teacher rarely does walks students through step by step. &lt;/p&gt;
+&lt;p&gt;The second reason is that the classes so far have emphasized the development of 'hacking' skills. That is the ability to research, often through googling, the answers
+to whatever coding problem you are facing and to write artful questions to present the problem to others for their advice. I also think that this is a reasonable
+approach for learning new coding skills; however, it is much easier for someone with some previous knowledge of coding than a rank beginner. For example, if I 
+don't understand the syntax of a function or, worse, if I don't know that functions have a special syntax, it is very hard to ask a questions about an error that 
+occurs related to the syntax of a function.&lt;/p&gt;
+&lt;p&gt;The issue of lack of step by step instruction is mostly resolved by the interactive &lt;a href="http://swirlstats.com/"&gt;Swirl&lt;/a&gt; program. It is an interactive program in Rstudio.
+It walks the student through each topic covered in class. It explains the topic, asks the student to type an illustrative function, and then discusses the result.
+It was excellent. Swirl has a variety of topics in addition to R Programming such as data analysis, statistics, and regression. See the &lt;a href="https://github.com/swirldev/swirl_courses#swirl-courses"&gt;swirl_courses&lt;/a&gt;
+on github for more info. I'll probably take them all.&lt;/p&gt;
+&lt;p&gt;In addition to some coding skills, a student will gain more from the class if they already understand statistics. The instructor explains the R concepts with 
+statistics examples. If you don't know the difference between normal, binomial, and Poisson distributions, you will certainly be left scratching your head and 
+just what heck the instructor just said. Also, R is for statistics. It is a domain specific language. If you don't understand the concept your coding, then it makes 
+difficult to code it in R. Most of the help docs implicitly assume you know statistics in their explanations and examples.&lt;/p&gt;
+&lt;p&gt;The forums were vibrant and alive. I think it may have been the mutual suffering that brought people together. The community TAs were excellent. I am not sure I ever 
+noted the teacher on the forums. With good TAs, the teacher is often not necessary on a MOOC, but it is always nice to get a thumbs up a post from the teacher.&lt;/p&gt;
+&lt;p&gt;All said, I did enjoy the class. In the end the all the programming assignments were fairly elementary, once one gets past the learning the new syntax and functions.
+I left with a much greater confidence to learn a new language. &lt;/p&gt;</summary><category term="Coursera"></category><category term="R"></category></entry></feed>
