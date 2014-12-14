@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>rbrianaaron</title><link>http://rbrianaaron.github.io/blog/</link><description></description><atom:link href="http://rbrianaaron.github.io/blog/feeds%5Crbrianaaron.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 14 Dec 2014 16:59:12 -0500</lastBuildDate><item><title>The Best and Worst States to Have a Heart Attack</title><link>http://rbrianaaron.github.io/blog/best-and-worst-states.html</link><description>&lt;p&gt;I wanted to use the data to see which states had on average the lowest mortality scores, the fewest people died, and which states had the highest mortality scores, 
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>rbrianaaron</title><link>http://rbrianaaron.github.io/blog/</link><description></description><atom:link href="http://rbrianaaron.github.io/blog/feeds%5Crbrianaaron.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 14 Dec 2014 16:59:12 -0500</lastBuildDate><item><title>The Best and Worst States to Have a Heart Attack</title><link>http://rbrianaaron.github.io/blog/best-and-worst-states.html</link><description>&lt;p&gt;While taking &lt;a href="https://www.coursera.org/course/rprog"&gt;R Programing&lt;/a&gt;, I was introduced to the Medicare 'Official Hospital Compare Data'.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://data.medicare.gov/data/hospital-compare"&gt;Official Hospital Compare Data&lt;/a&gt; states:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These are the official datasets used on the Medicare.gov Hospital Compare Website provided by the Centers for Medicare &amp;amp; Medicaid Services. 
+These data allow you to compare the quality of care at over 4,000 Medicare-certified hospitals across the country.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I think this means essentially all major hospitals in the United States.&lt;/p&gt;
+&lt;p&gt;I wanted to use the data to see which states had on average the lowest mortality scores, the fewest people died, and which states had the highest mortality scores, 
 the most people died. I was also curious if 'law of small numbers' might be at work. In small samples, extreme things can happen and their cause is randomness not 
 something exceptional about the group. In other words, will extremely high scoring states just be small states with few hospitals (because if they had more hospitals 
 then the additional hospitals would have just brought them closer to average).&lt;/p&gt;
