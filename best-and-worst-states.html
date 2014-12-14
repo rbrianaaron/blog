@@ -118,17 +118,18 @@
 	<a href="http://rbrianaaron.github.io/blog/tag/r.html"><i class="icon-tag"></i>R</a>
 	<a href="http://rbrianaaron.github.io/blog/tag/coursera.html"><i class="icon-tag"></i>Coursera</a>
 </footer><!-- /.post-info -->                </div>
-                <p>While taking <a href="https://www.coursera.org/course/rprog">R Programing</a>, I was introduced to the Medicare 'Official Hospital Compare Data'.</p>
-<p>The <a href="https://data.medicare.gov/data/hospital-compare">Official Hospital Compare Data</a> states:</p>
+                <p>While taking <a href="https://www.coursera.org/course/rprog">R Programing</a> from Johns Hopkins on Courseta, I was introduced to the Medicare 'Official Hospital Compare Data'.</p>
+<p>The <a href="https://data.medicare.gov/data/hospital-compare">Official Hospital Compare Data</a> website states:</p>
 <blockquote>
 <p>These are the official datasets used on the Medicare.gov Hospital Compare Website provided by the Centers for Medicare &amp; Medicaid Services. 
 These data allow you to compare the quality of care at over 4,000 Medicare-certified hospitals across the country.</p>
 </blockquote>
 <p>I think this means essentially all major hospitals in the United States.</p>
-<p>I wanted to use the data to see which states had on average the lowest mortality scores, the fewest people died, and which states had the highest mortality scores, 
-the most people died. I was also curious if 'law of small numbers' might be at work. In small samples, extreme things can happen and their cause is randomness not 
-something exceptional about the group. In other words, will extremely high scoring states just be small states with few hospitals (because if they had more hospitals 
-then the additional hospitals would have just brought them closer to average).</p>
+<p>I wanted to use the data to see which states had on average the lowest mortality scores, i.e.the fewest people died, after having a heart attack and which 
+states had the highest mortality scores, i.e.the most people died, after having a heart attack. I was also curious if 'law of small numbers' might be at work. 
+In small samples, extreme things can happen and their cause is randomness not something exceptional about the group. In other words, will extremely high 
+scoring states just be small states with few hospitals (because if they had more hospitals then the additional hospitals would have just brought them closer 
+to average).</p>
 <p>The data for this analysis come from the csv file titled, 'Out Come of Care Measures 9-29-2014.' I will use the 30-day death (mortality) measures for the analysis.
 On the <a href="http://www.medicare.gov/hospitalcompare/data/30-day-measures.html">Medicare.gov/30-day unplanned readmission and death measures page</a>,
 the 30-day death (mortality) measures are defined as follows:</p>
@@ -143,10 +144,10 @@ on the following 30-day mortality measures:</p>
 30-day death rate for heart failure (HF) patients
 30-day death rate for pneumonia patients</p>
 </blockquote>
-<p>In other words, did you die 30 days after receiving care?</p>
+<p>In other words, did you die 30 days after receiving care at a hospital?</p>
 <p>One would think though that if you had a heart attack, maybe you were just old or unhealthy, so you would die anyway. The data has been adjusted for this. 
 From the <a href="http://www.medicare.gov/hospitalcompare/data/30-day-measures.html">Medicare.gov/30-day unplanned readmission and death measures page</a>, the following
-information is given for rish adjustment:</p>
+information is given for risk adjustment:</p>
 <blockquote>
 <p>To make comparison of hospital performance fair and level the playing field, the 30-day unplanned readmission and (death) mortality measures adjust for patient 
 characteristics that may make death or unplanned readmission more likely, even if the hospital provided higher quality of care. These characteristics include 
@@ -235,14 +236,14 @@ truly know that neither of those places is a good place to have heart attack. Wy
         <i class="icon-tag icon-large"></i>R
     </a>
 </li>
-<li class="tag-2">
-    <a href="http://rbrianaaron.github.io/blog/tag/coursera.html">
-        <i class="icon-tag icon-large"></i>Coursera
-    </a>
-</li>
 <li class="tag-1">
     <a href="http://rbrianaaron.github.io/blog/tag/pelican.html">
         <i class="icon-tag icon-large"></i>pelican
+    </a>
+</li>
+<li class="tag-2">
+    <a href="http://rbrianaaron.github.io/blog/tag/coursera.html">
+        <i class="icon-tag icon-large"></i>Coursera
     </a>
 </li>
 
