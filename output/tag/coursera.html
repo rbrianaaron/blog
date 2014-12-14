@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Insert Images in Your Pelican Page</title>
+    <title>rbrianaaron - Coursera</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="rbrianaaron">
@@ -70,7 +70,7 @@
 						<i class="icon-folder-open icon-large"></i>Reflections
 					</a>
                   </li>
-                  <li class="active">
+                  <li >
                     <a href="http://rbrianaaron.github.io/blog/category/tutorials.html">
 						<i class="icon-folder-open icon-large"></i>Tutorials
 					</a>
@@ -90,95 +90,33 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-<section id="content">
-        <article>
-                <header>
-                        <h1>
-                                <a href=""
-                                        rel="bookmark"
-                                        title="Permalink to Insert Images in Your Pelican Page">
-                                        Insert Images in Your Pelican Page
-                                </a>
-                        </h1>
-                </header>
-                <div class="entry-content">
-                <div class="well">
-<footer class="post-info">
+        <div class="article">
+                <h1><a href="http://rbrianaaron.github.io/blog/review-of-R-programing-on=coursera.html">A Review of R Programing on Coursera</a></h1>
+                <div class="well small"><footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2014-11-16T09:23:05.475321-05:00">
-        <i class="icon-calendar"></i>Sun 16 November 2014
+<abbr class="published" title="2014-12-08T09:05:54.815753-05:00">
+        <i class="icon-calendar"></i>Mon 08 December 2014
 </abbr>
 <span class="label">By</span>
 <a href="http://rbrianaaron.github.io/blog/author/brian-aaron.html"><i class="icon-user"></i>Brian Aaron</a>
 <span class="label">Category</span>
-<a href="http://rbrianaaron.github.io/blog/category/tutorials.html"><i class="icon-folder-open"></i>Tutorials</a>.
+<a href="http://rbrianaaron.github.io/blog/category/reflections.html"><i class="icon-folder-open"></i>Reflections</a>.
 
 
 <span class="label">Tags</span>
-	<a href="http://rbrianaaron.github.io/blog/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
-	<a href="http://rbrianaaron.github.io/blog/tag/markdown.html"><i class="icon-tag"></i>markdown</a>
-</footer><!-- /.post-info -->                </div>
-                <p>I thought it looked easy enough in the Pelican docs <a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages">articles-and-pages</a> section <strong>Linking to static files</strong> section.</p>
-<p>I placed two <code>.png</code> images in the following directory:</p>
-<div class="highlight"><pre>C:\Users\Brian\virtualenvs\pelican\Scripts\content\images
-</pre></div>
+	<a href="http://rbrianaaron.github.io/blog/tag/coursera.html"><i class="icon-tag"></i>Coursera</a>
+	<a href="http://rbrianaaron.github.io/blog/tag/r.html"><i class="icon-tag"></i>R</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>A review of the R Programing course on Coursera</p>
+                        <a class="btn primary xsmall" href="http://rbrianaaron.github.io/blog/review-of-R-programing-on=coursera.html">more ...</a>
+                </div>
+        </div>
+        <hr />
 
-
-<p>I inserted the following scipt in my markdown file.</p>
-<p><code>![Alt Text]({filename}/images/output.png)</code></p>
-<p>When that didn't work, I tried:</p>
-<p><code>![Alt Text]({filename}C:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png)</code></p>
-<p>Here are the errors I got:</p>
-<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
-WARNING: Unable to find `/images/output.png`, skipping url replacement.
-WARNING: Unable to find `/images/first.png`, skipping url replacement.
-Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.97 seconds.
-</pre></div>
-
-
-<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
-WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png`, skipping url replacement.
-
-WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/first.png`, skipping url replacement.
-Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.29 seconds.
-</pre></div>
-
-
-<p>It's tough to be a novice. Okay, let's try and figure out what I was really suppossed to do.</p>
-<p>I look at the <a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages">docs</a> section <strong>Linking to static files</strong> again. 
-I was supposed to ensure that the <code>STATIC_PATHS</code> setting in the <code>pelicanconf.py</code> file includes images, for example:</p>
-<div class="highlight"><pre>STATIC_PATHS = [&#39;images&#39;]
-</pre></div>
-
-
-<p>I make the correction and generate the content again. I get the same error.</p>
-<p>I review the <a href="http://docs.getpelican.com/en/3.5.0/content.html">Writing Content docs</a> again, especially the following section in <strong>Linking to static files</strong>:</p>
-<blockquote>
-<p>For example, a project’s content directory might be structured like this:</p>
-</blockquote>
-<div class="highlight"><pre>content
-+-- images
-¦   +-- han.jpg
-+-- pdfs
-¦   +-- menu.pdf
-+-- pages
-    +-- test.md
-</pre></div>
-
-
-<p>I realize that my directory does not contain a pages folder. I add a pages folder and regenerate the page.</p>
-<p><strong>Success!</strong></p>
-<p>As I continue to play with directory structures, I discover that the above directory structure is not optimum. </p>
-<p>The Pelican Writing Content <a href="http://docs.getpelican.com/en/3.5.0/content.html?highlight=category">docs</a> section <strong>Articles and pages</strong> states:</p>
-<blockquote>
-<p>Pelican considers “articles” to be chronological content, such as posts on a blog, and thus associated with a date.</p>
-<p>The idea behind “pages” is that they are usually not temporal in nature and are used for content that does not change very often (e.g., “About” or “Contact” pages)</p>
-</blockquote>
-<p>I corrected my structure to include three directories under the content directory: images, pages, and Tutorials. Here the Tutorials serves as category under which
-I'll put my articles.  </p>
-                </div><!-- /.entry-content -->
-        </article>
-</section>
+                <section id="content" class="body">
+                <h1>Pages</h1>
+                        <li><a href="http://rbrianaaron.github.io/blog/pages/about.html">About</a></li>
+                </section>
         </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">

@@ -1,60 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="/" rel="alternate"></link><link href="/feeds%5Call.atom.xml" rel="self"></link><id>/</id><updated>2014-11-19T09:05:24-05:00</updated><entry><title>Arrays in Python and R</title><link href="/arrays-in-python-r.html" rel="alternate"></link><updated>2014-11-19T09:05:24-05:00</updated><author><name>Brian Aaron</name></author><id>tag:,2014-11-19:arrays-in-python-r.html</id><summary type="html">&lt;p&gt;This post is a learning reflection on arrays in Python versus R. It is to help me sort out the differeces and similariteis betweent two in my mind.&lt;/p&gt;
-&lt;p&gt;In basic Python, there is no array. There are lists though. One could create two lists and then iterate over them, add the two numbers together, and place them in list.
-For example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;a = [1,2,3]
-b = [4,5,6]
-new = []
-for i, item in enumerate(c):
-    new.append(a[i] + b[i]) 
-print new
-
-[5, 7, 9]
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;With Python Numpy, arrays are much simpler. One imports numpy and passes a list of numbers to the array function, for example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;a = np.array([1,2,3])
-b = np.array([4,5,6])
-print a+b
-
-[5 7 9]
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;The result seems like list, but upon calling type() and inpecting it is also a numpy array.&lt;/p&gt;
-&lt;p&gt;In R, the following is the syntax:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; b &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;+&lt;/span&gt; b
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;9&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;I am not sure how R holds the results of arrays that are added together. Hmmmm&lt;/p&gt;
-&lt;p&gt;How about other types of operations, for example a boolean comparison. The syntax appears to be the same. In Python Numpy:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;a = np.array([1,2,3])
-b = np.array([4,5,6])
-print a == b
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;In R:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; b &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;==&lt;/span&gt; b
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Square root in Python Numpy:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;print np.sqrt(a)
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;In R:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt; sqrt(a)
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="R"></category></entry><entry><title>Insert Images in Your Pelican Page</title><link href="/insert-images-in-your-pelican-page.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:,2014-11-16:insert-images-in-your-pelican-page.html</id><summary type="html">&lt;p&gt;I thought it looked easy enough in the Pelican docs &lt;a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages"&gt;articles-and-pages&lt;/a&gt; section &lt;strong&gt;Linking to static files&lt;/strong&gt; section.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="http://rbrianaaron.github.io/blog/" rel="alternate"></link><link href="http://rbrianaaron.github.io/blog/feeds%5Call.atom.xml" rel="self"></link><id>http://rbrianaaron.github.io/blog/</id><updated>2014-12-08T09:05:54-05:00</updated><entry><title>A Review of R Programing on Coursera</title><link href="http://rbrianaaron.github.io/blog/review-of-R-programing-on=coursera.html" rel="alternate"></link><updated>2014-12-08T09:05:54-05:00</updated><author><name>Brian Aaron</name></author><id>tag:rbrianaaron.github.io,2014-12-08:blog/review-of-R-programing-on=coursera.html</id><summary type="html">&lt;p&gt;I took the December 2014 offering of the The R Programming course on Cousera. It is the second course of the John Hopkin's Data Science Specialization.&lt;/p&gt;
+&lt;p&gt;My first impression was, 'Wow, a lot of people fail and retake the course' because at least three people posted that it was there second, third, or even fourth time 
+that they were retaking the course. I don't actually know how many people fail the course because I have not seen the data.&lt;/p&gt;
+&lt;p&gt;I can say that of the posters who said they were retaking the course, none of them had previously learned a programming language. The course says that the only 
+prerequisite is the first course in the series, the Data Scientist's Toolbox. If it were me, I think I would have at least said that previous knowledge of programming
+language would be beneficial for at least two reasons.&lt;/p&gt;
+&lt;p&gt;The first reason is that the instructor, in the videos, tends to give a high level overview of the idea he is presenting and then gives one example on the slides.
+This style is not unreasonable and is actually quite common. For someone who had a grasp of the main computer science concepts in another language, it is really
+more than enough information. In other classes that I have taken, the instructor will walk students through typing in each command and explaining the reasons for
+the results. I found and still find this style very helpful in learning new programming skills. This teacher rarely does walks students through step by step. &lt;/p&gt;
+&lt;p&gt;The second reason is that the classes so far have emphasized the development of 'hacking' skills. That is the ability to research, often through googling, the answers
+to whatever coding problem you are facing and to write artful questions to present the problem to others for their advice. I also think that this is a reasonable
+approach for learning new coding skills; however, it is much easier for someone with some previous knowledge of coding than a rank beginner. For example, if I 
+don't understand the syntax of a function or, worse, if I don't know that functions have a special syntax, it is very hard to ask a questions about an error that 
+occurs related to the syntax of a function.&lt;/p&gt;
+&lt;p&gt;The issue of lack of step by step instruction is mostly resolved by the interactive &lt;a href="http://swirlstats.com/"&gt;Swirl&lt;/a&gt; program. It is an interactive program in Rstudio.
+It walks the student through each topic covered in class. It explains the topic, asks the student to type an illustrative function, and then discusses the result.
+It was excellent. Swirl has a variety of topics in addition to R Programming such as data analysis, statistics, and regression. See the &lt;a href="https://github.com/swirldev/swirl_courses#swirl-courses"&gt;swirl_courses&lt;/a&gt;
+on github for more info. I'll probably take them all.&lt;/p&gt;
+&lt;p&gt;In addition to some coding skills, a student will gain more from the class if they already understand statistics. The instructor explains the R concepts with 
+statistics examples. If you don't know the difference between normal, binomial, and Poisson distributions, you will certainly be left scratching your head and 
+just what heck the instructor just said. Also, R is for statistics. It is a domain specific language. If you don't understand the concept your coding, then it makes 
+difficult to code it in R. Most of the help docs implicitly assume you know statistics in their explanations and examples.&lt;/p&gt;
+&lt;p&gt;The forums were vibrant and alive. I think it may have been the mutual suffering that brought people together. The community TAs were excellent. I am not sure I ever 
+noted the teacher on the forums. With good TAs, the teacher is often not necessary on a MOOC, but it is always nice to get a thumbs up a post from the teacher.&lt;/p&gt;
+&lt;p&gt;All said, I did enjoy the class. In the end the all the programming assignments were fairly elementary, once one gets past the learning the new syntax and functions.
+I left with a much greater confidence to learn a new language. &lt;/p&gt;</summary><category term="Coursera"></category><category term="R"></category></entry><entry><title>Insert Images in Your Pelican Page</title><link href="http://rbrianaaron.github.io/blog/insert-images-in-your-pelican-page.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:rbrianaaron.github.io,2014-11-16:blog/insert-images-in-your-pelican-page.html</id><summary type="html">&lt;p&gt;I thought it looked easy enough in the Pelican docs &lt;a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages"&gt;articles-and-pages&lt;/a&gt; section &lt;strong&gt;Linking to static files&lt;/strong&gt; section.&lt;/p&gt;
 &lt;p&gt;I placed two &lt;code&gt;.png&lt;/code&gt; images in the following directory:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;C:\Users\Brian\virtualenvs\pelican\Scripts\content\images
 &lt;/pre&gt;&lt;/div&gt;
@@ -111,7 +82,7 @@ I was supposed to ensure that the &lt;code&gt;STATIC_PATHS&lt;/code&gt; setting 
 &lt;p&gt;The idea behind “pages” is that they are usually not temporal in nature and are used for content that does not change very often (e.g., “About” or “Contact” pages)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I corrected my structure to include three directories under the content directory: images, pages, and Tutorials. Here the Tutorials serves as category under which
-I'll put my articles.  &lt;/p&gt;</summary><category term="pelican"></category><category term="markdown"></category></entry><entry><title>Changing Pelican Themes</title><link href="/changing-pelican-themes.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:,2014-11-16:changing-pelican-themes.html</id><summary type="html">&lt;p&gt;This post will guide the reader on how to install and change Pelican themes. &lt;/p&gt;
+I'll put my articles.  &lt;/p&gt;</summary><category term="pelican"></category><category term="markdown"></category></entry><entry><title>Changing Pelican Themes</title><link href="http://rbrianaaron.github.io/blog/changing-pelican-themes.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:rbrianaaron.github.io,2014-11-16:blog/changing-pelican-themes.html</id><summary type="html">&lt;p&gt;This post will guide the reader on how to install and change Pelican themes. &lt;/p&gt;
 &lt;p&gt;This post is for complete novices like myself. It is not intended for experienced users.&lt;/p&gt;
 &lt;p&gt;CD to the Scripts directory of your project and activate the virtualenv. &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;PS C:\Users\Brian&amp;gt; cd virtualenvs\pelican\Scripts
@@ -218,7 +189,7 @@ Done: Processed 0 article(s), 0 draft(s) and 4 page(s) in 1.49 seconds.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;I look on &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;. &lt;strong&gt;Success!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Pelican"></category></entry><entry><title>Pelican Setup Tutorial for Windows</title><link href="/pelican-setup-tutorial-windows.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:,2014-11-16:pelican-setup-tutorial-windows.html</id><summary type="html">&lt;p&gt;The Pelican documentation for installing Pelican, while well written, does not include specific information for Windows users. For the experienced, this may not be a problem and this post is not for them.
+&lt;p&gt;I look on &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt;. &lt;strong&gt;Success!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Pelican"></category></entry><entry><title>Pelican Setup Tutorial for Windows</title><link href="http://rbrianaaron.github.io/blog/pelican-setup-tutorial-windows.html" rel="alternate"></link><updated>2014-11-16T09:23:05-05:00</updated><author><name>Brian Aaron</name></author><id>tag:rbrianaaron.github.io,2014-11-16:blog/pelican-setup-tutorial-windows.html</id><summary type="html">&lt;p&gt;The Pelican documentation for installing Pelican, while well written, does not include specific information for Windows users. For the experienced, this may not be a problem and this post is not for them.
 This post is for novices, like myself. I hope it helps. &lt;/p&gt;
 &lt;p&gt;This post will show the reader how to create a Pelican skeleton project from installing the virtualenv and Pelican to previewing the first test page.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; This post assumes that you have installed Python, setuptools, pip, and virtualenv.&lt;/p&gt;
@@ -400,7 +371,7 @@ PS C:\Users\Brian\virtualenvs\pelican\Scripts&amp;gt;
 
 
 &lt;p&gt;I looked into the content folder and saw the following:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="/images/output.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://rbrianaaron.github.io/blog/images/output.png" /&gt;&lt;/p&gt;
 &lt;p&gt;As per &lt;strong&gt;Preview your site&lt;/strong&gt; section of the &lt;a href="http://docs.getpelican.com/en/3.5.0/quickstart.html"&gt;Quickstart&lt;/a&gt; page, 
 I changed directories to my &lt;strong&gt;output&lt;/strong&gt; directory and ran the following command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;PS C:\Users\Brian\virtualenvs\pelican\Scripts\output&amp;gt; python -m SimpleHTTPServer
@@ -420,6 +391,6 @@ I changed directories to my &lt;strong&gt;output&lt;/strong&gt; directory and ra
 
 
 &lt;p&gt;On the &lt;a href="http://localhost:8000/"&gt;http://localhost:8000/&lt;/a&gt; site in my web browser, I found:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="/images/first.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://rbrianaaron.github.io/blog/images/first.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;strong&gt;Success!&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Lesson Learned&lt;/strong&gt;&lt;/p&gt;</summary><category term="Pelican"></category></entry></feed>

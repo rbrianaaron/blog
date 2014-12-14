@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Insert Images in Your Pelican Page</title>
+    <title>The sum of absolute deviations from the mean and median</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="rbrianaaron">
@@ -65,12 +65,12 @@
             <ul class="nav">
                 <li><a href="http://rbrianaaron.github.io/blog/pages/about.html">About</a></li>
                           <li class="divider-vertical"></li>
-                  <li >
+                  <li class="active">
                     <a href="http://rbrianaaron.github.io/blog/category/reflections.html">
 						<i class="icon-folder-open icon-large"></i>Reflections
 					</a>
                   </li>
-                  <li class="active">
+                  <li >
                     <a href="http://rbrianaaron.github.io/blog/category/tutorials.html">
 						<i class="icon-folder-open icon-large"></i>Tutorials
 					</a>
@@ -96,8 +96,8 @@
                         <h1>
                                 <a href=""
                                         rel="bookmark"
-                                        title="Permalink to Insert Images in Your Pelican Page">
-                                        Insert Images in Your Pelican Page
+                                        title="Permalink to The sum of absolute deviations from the mean and median">
+                                        The sum of absolute deviations from the mean and median
                                 </a>
                         </h1>
                 </header>
@@ -105,77 +105,58 @@
                 <div class="well">
 <footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2014-11-16T09:23:05.475321-05:00">
-        <i class="icon-calendar"></i>Sun 16 November 2014
+<abbr class="published" title="2014-11-30T10:08:56.679505-05:00">
+        <i class="icon-calendar"></i>Sun 30 November 2014
 </abbr>
 <span class="label">By</span>
 <a href="http://rbrianaaron.github.io/blog/author/brian-aaron.html"><i class="icon-user"></i>Brian Aaron</a>
 <span class="label">Category</span>
-<a href="http://rbrianaaron.github.io/blog/category/tutorials.html"><i class="icon-folder-open"></i>Tutorials</a>.
+<a href="http://rbrianaaron.github.io/blog/category/reflections.html"><i class="icon-folder-open"></i>Reflections</a>.
 
 
 <span class="label">Tags</span>
-	<a href="http://rbrianaaron.github.io/blog/tag/pelican.html"><i class="icon-tag"></i>pelican</a>
-	<a href="http://rbrianaaron.github.io/blog/tag/markdown.html"><i class="icon-tag"></i>markdown</a>
+	<a href="http://rbrianaaron.github.io/blog/tag/python.html"><i class="icon-tag"></i>Python</a>
+	<a href="http://rbrianaaron.github.io/blog/tag/mean.html"><i class="icon-tag"></i>mean</a>
+	<a href="http://rbrianaaron.github.io/blog/tag/median.html"><i class="icon-tag"></i>median</a>
 </footer><!-- /.post-info -->                </div>
-                <p>I thought it looked easy enough in the Pelican docs <a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages">articles-and-pages</a> section <strong>Linking to static files</strong> section.</p>
-<p>I placed two <code>.png</code> images in the following directory:</p>
-<div class="highlight"><pre>C:\Users\Brian\virtualenvs\pelican\Scripts\content\images
-</pre></div>
-
-
-<p>I inserted the following scipt in my markdown file.</p>
-<p><code>![Alt Text]({filename}/images/output.png)</code></p>
-<p>When that didn't work, I tried:</p>
-<p><code>![Alt Text]({filename}C:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png)</code></p>
-<p>Here are the errors I got:</p>
-<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
-WARNING: Unable to find `/images/output.png`, skipping url replacement.
-WARNING: Unable to find `/images/first.png`, skipping url replacement.
-Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.97 seconds.
-</pre></div>
-
-
-<div class="highlight"><pre>(pelican) PS C:\Users\Brian\virtualenvs\pelican\Scripts&gt; pelican content
-WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/output.png`, skipping url replacement.
-
-WARNING: Unable to find `c:Users/Brian/virtualenvs/pelican/Scripts/content/images/first.png`, skipping url replacement.
-Done: Processed 2 article(s), 0 draft(s) and 0 page(s) in 2.29 seconds.
-</pre></div>
-
-
-<p>It's tough to be a novice. Okay, let's try and figure out what I was really suppossed to do.</p>
-<p>I look at the <a href="http://docs.getpelican.com/en/3.5.0/content.html#articles-and-pages">docs</a> section <strong>Linking to static files</strong> again. 
-I was supposed to ensure that the <code>STATIC_PATHS</code> setting in the <code>pelicanconf.py</code> file includes images, for example:</p>
-<div class="highlight"><pre>STATIC_PATHS = [&#39;images&#39;]
-</pre></div>
-
-
-<p>I make the correction and generate the content again. I get the same error.</p>
-<p>I review the <a href="http://docs.getpelican.com/en/3.5.0/content.html">Writing Content docs</a> again, especially the following section in <strong>Linking to static files</strong>:</p>
+                <p>While studying the concepts of the sum of the absolute deviations from the mean and median, I noted something peculiar.</p>
+<p>The commonly taught concept is that the median rather than the mean produces the smallest sum of absolute deviations and thus the smallest mean of absolute deviations.</p>
+<p>Just to review, for the following data: 1, 3, 3, 4, 5. The median, or middle number, is 3. The arithmetic mean is 3.2.</p>
+<p>The equation to find the sum of the absolute deviation from the median is:</p>
 <blockquote>
-<p>For example, a project’s content directory might be structured like this:</p>
+<p>|1-3| + |3-3| + |3-3| + |4-3| + |5-3| = 5</p>
 </blockquote>
-<div class="highlight"><pre>content
-+-- images
-¦   +-- han.jpg
-+-- pdfs
-¦   +-- menu.pdf
-+-- pages
-    +-- test.md
+<p>Using a similar equation, the sum of the absolute deviations from the mean is 5.2. The median produces the smaller number. </p>
+<p>Here is some code in Python, if you want to follow along:</p>
+<p>'''
+b = [1,3,3,4,5]</p>
+<p>def absolute_difference(data_lst):
+    'Prints out the mean and median. Prints the sum of the absolute deviations for the both the mean and median in order to demonstrate'
+    'that the median always minimizes the sum of the absolute deviations'</p>
+<div class="highlight"><pre>sm_abs_dev_mean = float()
+sm_abs_dev_median = float()
+
+print &#39;The ordered list is: &#39;, sorted(data_lst)
+print &#39;The mean of the list is: &#39;, np.mean(data_lst)
+print &#39;The median, the middle number, is: &#39;, np.median(data_lst)
+
+for datum in data_lst:
+    sm_abs_dev_mean += abs(datum-np.mean(data_lst))
+    sm_abs_dev_median += abs(datum-np.median(data_lst))
+
+print &#39;The sum of the absolute deviations from the mean is: &#39;, sm_abs_dev_mean
+print &#39;The sum of the absolute deviations from the median is: &#39;, sm_abs_dev_median
+
+return sm_abs_dev_mean, sm_abs_dev_median
 </pre></div>
 
 
-<p>I realize that my directory does not contain a pages folder. I add a pages folder and regenerate the page.</p>
-<p><strong>Success!</strong></p>
-<p>As I continue to play with directory structures, I discover that the above directory structure is not optimum. </p>
-<p>The Pelican Writing Content <a href="http://docs.getpelican.com/en/3.5.0/content.html?highlight=category">docs</a> section <strong>Articles and pages</strong> states:</p>
-<blockquote>
-<p>Pelican considers “articles” to be chronological content, such as posts on a blog, and thus associated with a date.</p>
-<p>The idea behind “pages” is that they are usually not temporal in nature and are used for content that does not change very often (e.g., “About” or “Contact” pages)</p>
-</blockquote>
-<p>I corrected my structure to include three directories under the content directory: images, pages, and Tutorials. Here the Tutorials serves as category under which
-I'll put my articles.  </p>
+<p>absolute_difference(b)</p>
+<p>'''</p>
+<p><strong>What I found surprising is that while using median always produces the smaller sum, sometimes the median and the mean produce an equal sum.</strong> </p>
+<p>To test how often this happens, I wrote a function to generate a random lists and function to run one hundred tests:</p>
+<p>'''</p>
+<p>'''</p>
                 </div><!-- /.entry-content -->
         </article>
 </section>
@@ -203,11 +184,6 @@ I'll put my articles.  </p>
 </li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-<li class="tag-1">
-    <a href="http://rbrianaaron.github.io/blog/tag/pelican.html">
-        <i class="icon-tag icon-large"></i>pelican
-    </a>
-</li>
 <li class="tag-4">
     <a href="http://rbrianaaron.github.io/blog/tag/coursera.html">
         <i class="icon-tag icon-large"></i>Coursera
@@ -221,6 +197,11 @@ I'll put my articles.  </p>
 <li class="tag-4">
     <a href="http://rbrianaaron.github.io/blog/tag/r.html">
         <i class="icon-tag icon-large"></i>R
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://rbrianaaron.github.io/blog/tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
     </a>
 </li>
 
