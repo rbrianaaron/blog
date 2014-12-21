@@ -1,5 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="http://rbrianaaron.github.io/blog/" rel="alternate"></link><link href="http://rbrianaaron.github.io/blog/feeds%5Call-en.atom.xml" rel="self"></link><id>http://rbrianaaron.github.io/blog/</id><updated>2014-12-14T16:59:12-05:00</updated><entry><title>The Best and Worst States to Have a Heart Attack</title><link href="http://rbrianaaron.github.io/blog/best-and-worst-states.html" rel="alternate"></link><updated>2014-12-14T16:59:12-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-14:blog/best-and-worst-states.html</id><summary type="html">&lt;p&gt;While taking &lt;a href="https://www.coursera.org/course/rprog"&gt;R Programing&lt;/a&gt; from Johns Hopkins on Coursera, I was introduced to the Medicare 'Official Hospital Compare Data'.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="http://rbrianaaron.github.io/blog/" rel="alternate"></link><link href="http://rbrianaaron.github.io/blog/feeds%5Call-en.atom.xml" rel="self"></link><id>http://rbrianaaron.github.io/blog/</id><updated>2014-12-21T10:26:01-05:00</updated><entry><title>About</title><link href="http://rbrianaaron.github.io/blog/about.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/about.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li class="active"&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+&lt;section id="content" class="body"&gt;
+    &lt;h1 class="entry-title"&gt;About&lt;/h1&gt;
+    
+    &lt;p&gt;I am taking some time off from paid employment to teach myself some new skills. This blog will record my journey. 
+The blog is mostly for me and my learning to reflect on and process new ideas. If others find some of the articles helpful, that's great too.&lt;/p&gt;
+&lt;p&gt;My current interests include Python, R, data, statistics, and the markets.&lt;/p&gt;
+&lt;/section&gt;
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+&lt;section id="content" class="body"&gt;
+&lt;h1&gt;Archives for A Pelican Blog&lt;/h1&gt;
+
+&lt;dl&gt;
+&lt;/dl&gt;
+&lt;/section&gt;
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog - Authors</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog-authors.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog-authors.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+
+&lt;section id="content" class="body"&gt;
+    &lt;h1&gt;Authors on A Pelican Blog&lt;/h1&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+&lt;ul&gt;
+&lt;/ul&gt;
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog - Tags</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog-tags.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog-tags.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+
+&lt;section id="content" class="body"&gt;
+    &lt;h1&gt;Tags for A Pelican Blog&lt;/h1&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+&lt;section id="content" class="body"&gt;
+&lt;h2&gt;Pages&lt;/h2&gt;
+        &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;/section&gt;
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>The Best and Worst States to Have a Heart Attack</title><link href="http://rbrianaaron.github.io/blog/best-and-worst-states.html" rel="alternate"></link><updated>2014-12-14T16:59:12-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-14:blog/best-and-worst-states.html</id><summary type="html">&lt;p&gt;While taking &lt;a href="https://www.coursera.org/course/rprog"&gt;R Programing&lt;/a&gt; from Johns Hopkins on Coursera, I was introduced to the Medicare 'Official Hospital Compare Data'.&lt;/p&gt;
 &lt;p&gt;The &lt;a href="https://data.medicare.gov/data/hospital-compare"&gt;Official Hospital Compare Data&lt;/a&gt; website states:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;These are the official datasets used on the Medicare.gov Hospital Compare Website provided by the Centers for Medicare &amp;amp; Medicaid Services. 

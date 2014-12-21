@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>rbrianaaron</title><link href="http://rbrianaaron.github.io/blog/" rel="alternate"></link><link href="http://rbrianaaron.github.io/blog/feeds%5Coutput.atom.xml" rel="self"></link><id>http://rbrianaaron.github.io/blog/</id><updated>2014-12-21T10:26:01-05:00</updated><entry><title>A Pelican Blog</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+&lt;section id="content" class="body"&gt;
+&lt;h1&gt;Archives for A Pelican Blog&lt;/h1&gt;
+
+&lt;dl&gt;
+&lt;/dl&gt;
+&lt;/section&gt;
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog - Authors</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog-authors.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog-authors.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+
+&lt;section id="content" class="body"&gt;
+    &lt;h1&gt;Authors on A Pelican Blog&lt;/h1&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+&lt;ul&gt;
+&lt;/ul&gt;
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog - Tags</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog-tags.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog-tags.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+
+&lt;section id="content" class="body"&gt;
+    &lt;h1&gt;Tags for A Pelican Blog&lt;/h1&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry><entry><title>A Pelican Blog</title><link href="http://rbrianaaron.github.io/blog/a-pelican-blog.html" rel="alternate"></link><updated>2014-12-21T10:26:01-05:00</updated><author><name>rbrianaaron</name></author><id>tag:rbrianaaron.github.io,2014-12-21:blog/a-pelican-blog.html</id><summary type="html">
+        &lt;header id="banner" class="body"&gt;
+                &lt;h1&gt;&lt;a href="/"&gt;A Pelican Blog &lt;/a&gt;&lt;/h1&gt;
+                &lt;nav&gt;&lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;&lt;/nav&gt;
+        &lt;/header&gt;&lt;!-- /#banner --&gt;
+&lt;section id="content" class="body"&gt;
+&lt;h2&gt;Pages&lt;/h2&gt;
+        &lt;li&gt;&lt;a href="/pages/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;/section&gt;
+        &lt;section id="extras" class="body"&gt;
+                &lt;div class="social"&gt;
+                        &lt;h2&gt;social&lt;/h2&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate"&gt;atom feed&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;/ul&gt;
+                &lt;/div&gt;&lt;!-- /.social --&gt;
+        &lt;/section&gt;&lt;!-- /#extras --&gt;
+
+        &lt;footer id="contentinfo" class="body"&gt;
+                &lt;address id="about" class="vcard body"&gt;
+                Proudly powered by &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt;, which takes great advantage of &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.
+                &lt;/address&gt;&lt;!-- /#about --&gt;
+
+                &lt;p&gt;The theme is by &lt;a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/"&gt;Smashing Magazine&lt;/a&gt;, thanks!&lt;/p&gt;
+        &lt;/footer&gt;&lt;!-- /#contentinfo --&gt;
+
+</summary></entry></feed>
