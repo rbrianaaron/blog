@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Data type versus mode of variable</title>
+    <title>The Multinomial Distribution in R</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="rbrianaaron">
@@ -65,12 +65,12 @@
             <ul class="nav">
                 <li><a href="http://rbrianaaron.github.io/blog/pages/about.html">About</a></li>
                           <li class="divider-vertical"></li>
-                  <li class="active">
+                  <li >
                     <a href="http://rbrianaaron.github.io/blog/category/reflections.html">
 						<i class="icon-folder-open icon-large"></i>Reflections
 					</a>
                   </li>
-                  <li >
+                  <li class="active">
                     <a href="http://rbrianaaron.github.io/blog/category/tutorials.html">
 						<i class="icon-folder-open icon-large"></i>Tutorials
 					</a>
@@ -96,8 +96,8 @@
                         <h1>
                                 <a href=""
                                         rel="bookmark"
-                                        title="Permalink to Data type versus mode of variable">
-                                        Data type versus mode of variable
+                                        title="Permalink to The Multinomial Distribution in R">
+                                        The Multinomial Distribution in R
                                 </a>
                         </h1>
                 </header>
@@ -105,20 +105,89 @@
                 <div class="well">
 <footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2014-11-25T08:54:46.500440-05:00">
-        <i class="icon-calendar"></i>Tue 25 November 2014
+<abbr class="published" title="2014-12-23T16:04:05.953397-05:00">
+        <i class="icon-calendar"></i>Tue 23 December 2014
 </abbr>
 <span class="label">By</span>
-<a href="http://rbrianaaron.github.io/blog/author/brian-aaron.html"><i class="icon-user"></i>Brian Aaron</a>
+<a href="http://rbrianaaron.github.io/blog/author/rbrianaaron.html"><i class="icon-user"></i>rbrianaaron</a>
 <span class="label">Category</span>
-<a href="http://rbrianaaron.github.io/blog/category/reflections.html"><i class="icon-folder-open"></i>Reflections</a>.
+<a href="http://rbrianaaron.github.io/blog/category/tutorials.html"><i class="icon-folder-open"></i>Tutorials</a>.
 
 
 <span class="label">Tags</span>
-	<a href="http://rbrianaaron.github.io/blog/tag/python.html"><i class="icon-tag"></i>Python</a>
 	<a href="http://rbrianaaron.github.io/blog/tag/r.html"><i class="icon-tag"></i>R</a>
+	<a href="http://rbrianaaron.github.io/blog/tag/statistics.html"><i class="icon-tag"></i>statistics</a>
 </footer><!-- /.post-info -->                </div>
-                <p>In R, the function 'mode(variable name or object)' will tell you the data type in a similar way that in Python the function 'type(variable name or object).</p>
+                <p>I just watched the excellent tutorial video by jbstatistics, <a href="https://www.youtube.com/watch?v=syVW7DgvUaY">Introduction to the Multinomial Distribution</a>.</p>
+<p>The examples in this post are taken from the video.*</p>
+<p>Example 1:
+The distibution of blood types in the US is:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th align="center">O</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">AB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">probablity</td>
+<td align="center">0.44</td>
+<td align="center">0.42</td>
+<td align="center">0.10</td>
+<td align="center">0.04</td>
+</tr>
+</tbody>
+</table>
+<p>In a random sample of 10 Americans, what is the probability that 6 have bloodtype O, 2 have A, 1 has B, and 1 has AB?</p>
+<p>The equation for the multinomial distribution is:</p>
+<blockquote>
+<p>P(X1=x1, ... Xk=xk) = n! / x1!...xk! * p1^x1,...pk^xk</p>
+<p>P(x1=6, x2=2, x3=1, x4=1) = 10! / 6!<em>2!</em>1!<em>1! * 0.44^6 </em>0.42^2<em>0.10^1</em>0.04^1</p>
+</blockquote>
+<p>The following is the function documentation for <a href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/Multinom.html">dmultinom</a> in R:</p>
+<div class="highlight"><pre># dmultinom(x, size = NULL, prob, log = FALSE)
+#
+# x vector of length K of integers in 0:size.
+#
+# n number of random vectors to draw.
+#
+# size  integer, say N, specifying the total number of objects that are put into K boxes in the typical multinomial experiment. 
+#  For dmultinom, it defaults to sum(x).
+#
+# prob  numeric non-negative vector of length K, specifying the probability for the K classes; is internally normalized to sum 1. 
+#  Infinite and missing values are not allowed.
+# log   logical; if TRUE, log probabilities are computed.
+</pre></div>
+
+
+<p>The following is the solution in R:</p>
+<div class="highlight"><pre><span class="o">&gt;</span> x <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="o">&gt;</span> p <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">0.44</span><span class="p">,</span> <span class="m">0.42</span><span class="p">,</span> <span class="m">0.10</span><span class="p">,</span> <span class="m">0.04</span><span class="p">)</span>
+<span class="o">&gt;</span> dmultinom<span class="p">(</span>x<span class="p">,</span> size<span class="o">=</span><span class="m">10</span><span class="p">,</span> prop<span class="o">=</span>p<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.01290254</span>
+</pre></div>
+
+
+<p>Example 2:</p>
+<p>An urn contains 8 red balls, 3 yellow balls, and 9 white balls. 6 balls are randomly selected without replacement. What is the probability that 2 are red,
+1 is yellow, and 3 are white?</p>
+<blockquote>
+<p>P(x1=2, x2=1, x3=3) = 6! / 2!<em>1!</em>3! * (8/20)^2 * (3/20)^1 * (9/20)^3</p>
+</blockquote>
+<p>The solution in R:</p>
+<div class="highlight"><pre><span class="o">&gt;</span> x <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="o">&gt;</span> p <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">8</span><span class="o">/</span><span class="m">20</span><span class="p">,</span> <span class="m">3</span><span class="o">/</span><span class="m">20</span><span class="p">,</span> <span class="m">9</span><span class="o">/</span><span class="m">20</span><span class="p">)</span>
+<span class="o">&gt;</span> dmultinom<span class="p">(</span>x<span class="p">,</span> size<span class="o">=</span><span class="m">6</span><span class="p">,</span> prob<span class="o">=</span>p<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.1312</span>
+</pre></div>
+
+
+<p>Many thanks to Dr. Balka of the University of Guelph for his excellent tutotrial!</p>
+<p>*Balka, Jeremey [jbstatistics]. (2012, 12, 18). Introduction to the Multinomial Distribution. [Video file]. Retrieved from https://www.youtube.com/watch?v=syVW7DgvUaY.</p>
                 </div><!-- /.entry-content -->
         </article>
 </section>
@@ -151,9 +220,9 @@
         <i class="icon-tag icon-large"></i>pelican
     </a>
 </li>
-<li class="tag-2">
-    <a href="http://rbrianaaron.github.io/blog/tag/r.html">
-        <i class="icon-tag icon-large"></i>R
+<li class="tag-4">
+    <a href="http://rbrianaaron.github.io/blog/tag/statistics.html">
+        <i class="icon-tag icon-large"></i>statistics
     </a>
 </li>
 <li class="tag-4">
@@ -161,9 +230,14 @@
         <i class="icon-tag icon-large"></i>markdown
     </a>
 </li>
+<li class="tag-1">
+    <a href="http://rbrianaaron.github.io/blog/tag/r.html">
+        <i class="icon-tag icon-large"></i>R
+    </a>
+</li>
 <li class="tag-2">
-    <a href="http://rbrianaaron.github.io/blog/tag/python.html">
-        <i class="icon-tag icon-large"></i>Python
+    <a href="http://rbrianaaron.github.io/blog/tag/coursera.html">
+        <i class="icon-tag icon-large"></i>Coursera
     </a>
 </li>
 
