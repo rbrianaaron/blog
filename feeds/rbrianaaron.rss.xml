@@ -104,27 +104,59 @@ characteristics that may make death or unplanned readmission more likely, even i
 the patient’s age, past medical history, and other diseases or conditions (comorbidities) the patient had when they were admitted that are known to increase 
 the patient’s risk of dying or of having an unplanned readmission.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Okay, enough background. Let's get to the analysis. Here is the psuedocode for my algorithm:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;        #Load the data into the data variable.
-
-        #Coerce factors as neccesary to ensure states are characters and the 30-day stats are numeric.
-
+&lt;p&gt;Okay, enough background. Let's get to the analysis. Here is the code:&lt;/p&gt;
+&lt;div class="gist"&gt;
+    &lt;script src='https://gist.github.com/a8a353b66b8cfbdcc0b7.js'&gt;&lt;/script&gt;
+    &lt;noscript&gt;
+        &lt;pre&gt;&lt;code&gt;beststates &lt;- function(){
+        #The function will return the top five and bottom five states for 30 day moratality rates
+        #for heart attack patients.
+        #
+        #Args:
+        #  None. The dataset is the OutcomeofCareMeasures.csv file taken fromt the Medicare.gov
+        #  website. It can be downloaded at: https://data.medicare.gov/data/hospital-compare
+        #
+        #Returns:
+        #
+        #  The top five and bottom five states for the 30 day mortality rates for heart attack
+        #  patients and the number of hospitals in that state that had measurements for the
+        #  statistics. Hosptials with NA data will be excluded.
+        
+        #Load the data into the data variable.
+        data &lt;- read.csv('OutcomeofCareMeasures2014.csv')
+        
+        #Coerce factors as neccesary to ensure states are characters and the 30 day stats are numeric.
+        data[,2] &lt;- as.character(data[,2])  #Hospital Name
+        data[,7] &lt;- as.character(data[,7])  #State
+        suppressWarnings(data[,11] &lt;- as.numeric(as.character(data[,11])))  #30-day mortality
+        
         #Remove the hospitals that have NA for 30-day mortality rate for heart attack.
-
-        #Split data by state, take the mean of the 30-day mortality data, and return averages to the averages vector
-
-        #Place state abbreviations in states vector.
-
+        data &lt;- subset(data, !is.na(data[,11]))
+        
+        #Split data by state, take the mean of the 30-day mortality data, 
+        #and return averages to averages vector
+        averages &lt;- tapply(data[,11], data[,7], mean)
+        states &lt;- dimnames(averages)  #Place state abbreviations in states vector.
+        averages &lt;- as.vector(averages)
+        
         #Count the hospitals per state and return it to the number_hosptals vector.
-
+        number_hospitals &lt;- tapply(data[,2], data[,7], length)
+        number_hospitals &lt;- as.vector(number_hospitals)
+        
         #Combine the vectors into a dataframe.
-
+        data_final &lt;- data.frame(states, averages, number_hospitals)
+        names(data_final) &lt;- c('States', '30-day mortality heart attack', 'Number of Hospitals')
+        
         #Sort the dataframe by the average 30 day mortality scores
-
+        data_final &lt;- data_final[order(data_final[, 2]), ]
+        
         #Print out the first and last five states in the dataframe.
-&lt;/pre&gt;&lt;/div&gt;
-
-
+        print(head(data_final), 5)
+        print(tail(data_final), 5)
+                
+}&lt;/code&gt;&lt;/pre&gt;
+    &lt;/noscript&gt;
+&lt;/div&gt;
 &lt;p&gt;Here are the results:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;   States 30-day mortality heart attack Number of Hospitals
 28     MT                      14.07500                   8

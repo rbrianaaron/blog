@@ -154,27 +154,59 @@ characteristics that may make death or unplanned readmission more likely, even i
 the patient’s age, past medical history, and other diseases or conditions (comorbidities) the patient had when they were admitted that are known to increase 
 the patient’s risk of dying or of having an unplanned readmission.</p>
 </blockquote>
-<p>Okay, enough background. Let's get to the analysis. Here is the psuedocode for my algorithm:</p>
-<div class="highlight"><pre>        #Load the data into the data variable.
-
-        #Coerce factors as neccesary to ensure states are characters and the 30-day stats are numeric.
-
+<p>Okay, enough background. Let's get to the analysis. Here is the code:</p>
+<div class="gist">
+    <script src='https://gist.github.com/a8a353b66b8cfbdcc0b7.js'></script>
+    <noscript>
+        <pre><code>beststates <- function(){
+        #The function will return the top five and bottom five states for 30 day moratality rates
+        #for heart attack patients.
+        #
+        #Args:
+        #  None. The dataset is the OutcomeofCareMeasures.csv file taken fromt the Medicare.gov
+        #  website. It can be downloaded at: https://data.medicare.gov/data/hospital-compare
+        #
+        #Returns:
+        #
+        #  The top five and bottom five states for the 30 day mortality rates for heart attack
+        #  patients and the number of hospitals in that state that had measurements for the
+        #  statistics. Hosptials with NA data will be excluded.
+        
+        #Load the data into the data variable.
+        data <- read.csv('OutcomeofCareMeasures2014.csv')
+        
+        #Coerce factors as neccesary to ensure states are characters and the 30 day stats are numeric.
+        data[,2] <- as.character(data[,2])  #Hospital Name
+        data[,7] <- as.character(data[,7])  #State
+        suppressWarnings(data[,11] <- as.numeric(as.character(data[,11])))  #30-day mortality
+        
         #Remove the hospitals that have NA for 30-day mortality rate for heart attack.
-
-        #Split data by state, take the mean of the 30-day mortality data, and return averages to the averages vector
-
-        #Place state abbreviations in states vector.
-
+        data <- subset(data, !is.na(data[,11]))
+        
+        #Split data by state, take the mean of the 30-day mortality data, 
+        #and return averages to averages vector
+        averages <- tapply(data[,11], data[,7], mean)
+        states <- dimnames(averages)  #Place state abbreviations in states vector.
+        averages <- as.vector(averages)
+        
         #Count the hospitals per state and return it to the number_hosptals vector.
-
+        number_hospitals <- tapply(data[,2], data[,7], length)
+        number_hospitals <- as.vector(number_hospitals)
+        
         #Combine the vectors into a dataframe.
-
+        data_final <- data.frame(states, averages, number_hospitals)
+        names(data_final) <- c('States', '30-day mortality heart attack', 'Number of Hospitals')
+        
         #Sort the dataframe by the average 30 day mortality scores
-
+        data_final <- data_final[order(data_final[, 2]), ]
+        
         #Print out the first and last five states in the dataframe.
-</pre></div>
-
-
+        print(head(data_final), 5)
+        print(tail(data_final), 5)
+                
+}</code></pre>
+    </noscript>
+</div>
 <p>Here are the results:</p>
 <div class="highlight"><pre>   States 30-day mortality heart attack Number of Hospitals
 28     MT                      14.07500                   8
@@ -226,19 +258,19 @@ truly know that neither of those places is a good place to have heart attack. Wy
 </li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-<li class="tag-1">
-    <a href="http://rbrianaaron.github.io/blog/tag/pelican.html">
-        <i class="icon-tag icon-large"></i>pelican
-    </a>
-</li>
-<li class="tag-4">
-    <a href="http://rbrianaaron.github.io/blog/tag/statistics.html">
-        <i class="icon-tag icon-large"></i>statistics
-    </a>
-</li>
 <li class="tag-4">
     <a href="http://rbrianaaron.github.io/blog/tag/markdown.html">
         <i class="icon-tag icon-large"></i>markdown
+    </a>
+</li>
+<li class="tag-2">
+    <a href="http://rbrianaaron.github.io/blog/tag/coursera.html">
+        <i class="icon-tag icon-large"></i>Coursera
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://rbrianaaron.github.io/blog/tag/pelican.html">
+        <i class="icon-tag icon-large"></i>pelican
     </a>
 </li>
 <li class="tag-1">
@@ -246,9 +278,9 @@ truly know that neither of those places is a good place to have heart attack. Wy
         <i class="icon-tag icon-large"></i>R
     </a>
 </li>
-<li class="tag-2">
-    <a href="http://rbrianaaron.github.io/blog/tag/coursera.html">
-        <i class="icon-tag icon-large"></i>Coursera
+<li class="tag-4">
+    <a href="http://rbrianaaron.github.io/blog/tag/statistics.html">
+        <i class="icon-tag icon-large"></i>statistics
     </a>
 </li>
 
